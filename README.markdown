@@ -3,30 +3,73 @@ accessible-slick
 
 _the last (accessible) carousel you'll ever need_
 
-## What is this repo?
+A fully accessible, WCAG 2.0 / 2.1 compliant, drop-in replacement for Slick Slider (1.8.1) intended to make life easier for real-world dev teams who need to pass accessibility audits.
 
-* An accessible drop-in replacement for the Slick Slider package intended to ease the pain for real-world dev teams trying to conform to WCAG 2.0/2.1 (Web Content Accessibility Guidelines)
+This package implements [accessibility and usability improvements](#what-makes-this-accessible) crafted and tested by native screen reader users and expert accessibility consultants at [Accessible360](https://accessible360.com) based on their experiences helping to make hundreds of carousels accessible for clients around the world. Read on to learn more about [why this package exists](#why-is-this-needed), its [features](#what-makes-this-accesible), [how to use it](#usage), and how you can get involved!
 
+#### Demo
+
+https://accessible360.github.io/accessible-slick
+
+#### CDN
+
+##### Example using jsDelivr
+
+Just add a link to the css file in your `<head>`:
+
+```html
+TODO: pending publish to NPM
+```
+
+Then, before your closing `<body>` tag add:
+
+```html
+TODO: pending publish to NPM
+```
+
+#### Package Managers
+
+```sh
+TODO: pending publish to NPM
+```
 
 ## Why is this needed?
 
-* Slick Slider is widely used, but has a number of accessibility issues that consistently cause pain for many companies when they undergo accessibility audits. [[1]](https://diginclusion.com/industry-updates/wai-aria-dark-art-of-accessibility/)
-* Its [been abandoned](https://github.com/kenwheeler/slick/graphs/code-frequency) by it's original author.
-* The contributor community is stalemated about how (and if) to proceed with accessibility. [[1]](https://github.com/kenwheeler/slick/issues?q=is%3Aissue+is%3Aopen+accessibility) [[2]](https://github.com/kenwheeler/slick/pulls?q=is%3Apr+is%3Aopen+accessibility)
-* A practical, easy solution is needed _right now_, even if its imperfect (baby steps!).
+Almost by design, carousels are pretty hard for screen reader users (especially newbies) to understand and interact with successfully, let alone enjoy. Its hard to know where slides begin and end, how the slide navigation dots work, or where the various controls are. Carousels also vary quite a bit between sites or even just between pages, so it can be difficult for screen reader users to build up a reliable mental model that applies to ALL carousels. And let's not even get started on on autoplay functionality ([WCAG 2.2.2](https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html), anyone?)!
+
+As one of the most widely used carousel packages out there, Slick Slider has many of these same accessibility issues, making it a consistent source of frustration for dev teams when they go through an accessibility audit. Efforts have been made in the Slick Slider repo to improve these issues (especially in version 1.8.1), but those efforts have also introduced new accessibility issues too!
+
+In the long term it'd be great to contribute some improvements to the core Slick Slider repo, but that may or may not be possible considering it's [been abandoned](https://github.com/kenwheeler/slick/graphs/code-frequency) (but not deprecated) by it's original author since 2016. A maintainer or two has recently stepped up to resume development, but with over [1,000 open issues](https://github.com/kenwheeler/slick/issues?q=is%3Aissue+is%3Aopen+accessibility) and nearly [200 open PRs](https://github.com/kenwheeler/slick/pulls?q=is%3Apr+is%3Aopen+accessibility) (some with conflicting approaches), its unlikely that the big fixes needed will make their way to the master branch any time soon.
+
+In the short term, we're releasing our take on an accessible Slick Slider implementation as a fork that respects the original functionality and API features as much as possible so you can improve the accessibility of your carousels **right now**! We'll make it available through all the same channels (like NPM and jsDelivr) so upgrading is as easy as changing the URLs in your `<link>` and `<script>` tags without having to even _touch_ your existing JavaScript code!
 
 
-## How is this package accessible?
+## What makes this accessible?
 
-* Implements a numbers of accessibility and usability enhancements identified and tested by professional accessibility auditors and native screen reader and keyboard-only live users at Accessible360.
+`TODO`
 
 ### Feature additions
 
 `TODO: list out new features with reasoning.`
 
-### Code changes
+### Feature changes
 
 `TODO: list out changes made to original package with reasoning.`
+
+
+## Usage
+
+All of the original settings, events, and other API features are available, so your existing configurations won't need to be tweaked at all! Refer to the original Slick Slider documentation to see how to use them:
+
+* [Data attribute settings](https://github.com/kenwheeler/slick#data-attribute-settings)
+* [Settings](https://github.com/kenwheeler/slick#settings)
+* [Events](https://github.com/kenwheeler/slick#events)
+* [Methods](https://github.com/kenwheeler/slick#methods)
+
+
+## Development
+
+`TODO: pending replacement of Makefile-based build system with something else.`
 
 
 ## TODO
@@ -58,30 +101,3 @@ _the last (accessible) carousel you'll ever need_
   * This should have a similar format to the original package's doc page so its nice and familiar, but without feeling like a rip-off.
 - [ ] Update this README to contain clear, friendly guidance in a format similar to the original package so its familiar for devs.
 - [ ] Add usage guidance with accessibility best practices.
-
-
-## References
-
-* http://shouldiuseacarousel.com/
-* https://diginclusion.com/industry-updates/wai-aria-dark-art-of-accessibility/
-
-
-## Development
-
-`TODO: pending replacement of Makefile-based build system with something else.`
-
-
-## Installation
-
-`TODO: pending publish of packages on npm and Bower.`
-
-
-## Usage
-
-`TODO: provide demo page link.`
-
-All of the original settings, events, and other API features are available.
-
-* [Settings](https://github.com/kenwheeler/slick#settings)
-* [Events](https://github.com/kenwheeler/slick#events)
-* [Methods](https://github.com/kenwheeler/slick#methods)
