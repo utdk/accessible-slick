@@ -512,3 +512,31 @@ ul.nav li a {
 	width: 1px !important;
 	white-space: nowrap !important;            /* 3 */
 }
+
+.skip-link {
+  position: absolute;
+  left: 20px;
+  top: -100px;
+  transition: top .2s ease-out;
+
+  background-color: var(--alternative-color);
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+}
+
+  .skip-link:focus {
+    top: 20px;
+    outline: 5px dashed orange;
+    outline-offset: 2px;
+  }
+
+  .skip-link:hover {
+    text-decoration: underline;
+  }
+
+#main:focus {
+  outline: none;
+}

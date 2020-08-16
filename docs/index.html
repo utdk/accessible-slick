@@ -41,629 +41,637 @@
 </head>
 
 <body>
-  <div class="header">
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="header">
     <div class="header-content">
       <h1 class="title">accessible-slick</h1>
       <p class="subheading">the last (accessible) carousel you'll ever need</p>
 
-      <ul class="nav">
-        <li>
-          <a href="#demos">demos</a>
-        </li>
-        <li>
-          <a href="#getting-started">usage</a>
-        </li>
-        <li>
-          <a href="#settings">settings</a>
-        </li>
-        <li>
-          <a href="#go-get-it">get it now</a>
-        </li>
-      </ul>
+      <nav>
+        <ul class="nav">
+          <li>
+            <a href="#demos">demos</a>
+          </li>
+          <li>
+            <a href="#getting-started">usage</a>
+          </li>
+          <li>
+            <a href="#settings">settings</a>
+          </li>
+          <li>
+            <a href="#go-get-it">get it now</a>
+          </li>
+        </ul>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <div class="fixed-header">
+  <header class="fixed-header">
     <div class="header-content">
       <h1 class="title">accessible-slick</h1>
       <p class="subheading">the last (accessible) carousel you'll ever need</p>
 
-      <ul class="nav">
-        <li>
-          <a href="#demos">demos</a>
-        </li>
-        <li>
-          <a href="#getting-started">usage</a>
-        </li>
-        <li>
-          <a href="#settings">settings</a>
-        </li>
-        <li>
-          <a href="#go-get-it">get it now</a>
-        </li>
-      </ul>
+      <nav>
+        <ul class="nav">
+          <li>
+            <a href="#demos">demos</a>
+          </li>
+          <li>
+            <a href="#getting-started">usage</a>
+          </li>
+          <li>
+            <a href="#settings">settings</a>
+          </li>
+          <li>
+            <a href="#go-get-it">get it now</a>
+          </li>
+        </ul>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <section id="features" class="blue">
-    <div class="content">
-      <h2>Features</h2>
+  <main id="main" tabindex="-1">
+    <section id="features" class="blue">
+      <div class="content">
+        <h2>Features</h2>
 
-      <p>All of the same great features as the original Slick package, along with:</p>
+        <p>All of the same great features as the original Slick package, along with:</p>
 
-      <ul class="features">
-        <li></li>
-      </ul>
+        <ul class="features">
+          <li></li>
+        </ul>
 
-        <hr>
+          <hr>
 
-      <h2 id="demos" class="sr-only" tabindex="-1">Demos</h2>
+        <h2 id="demos" class="sr-only" tabindex="-1">Demos</h2>
 
-      <h3>Single Item</h3>
+        <h3>Single Item</h3>
 
-      <div class="slider single-item">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-      </div>
+        <div class="slider single-item">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+        </div>
 
-      <pre><code class="language-javascript">$('.single-item').slick();</code></pre>
+        <pre><code class="language-javascript">$('.single-item').slick();</code></pre>
 
-        <hr>
+          <hr>
 
-      <h3>Multiple Items</h3>
+        <h3>Multiple Items</h3>
 
-      <div class="slider multiple-items">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-        <div>7</div>
-        <div>8</div>
-        <div>9</div>
-      </div>
+        <div class="slider multiple-items">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+        </div>
 
-      <pre><code class=" language-javascript">$('.multiple-items').slick({
-  infinite: true,
-  slidesToShow: 3,
-  slidesToScroll: 3
-});</code></pre>
+        <pre><code class=" language-javascript">$('.multiple-items').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 3
+  });</code></pre>
 
-        <hr>
+          <hr>
 
-      <h3>Responsive Display</h3>
+        <h3>Responsive Display</h3>
 
-      <div class="slider responsive">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-        <div>7</div>
-        <div>8</div>
-      </div>
+        <div class="slider responsive">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+        </div>
 
-      <pre><code class=" language-javascript">$('.responsive').slick({
-  dots: true,
-  infinite: false,
-  speed: 300,
-  slidesToShow: 4,
-  slidesToScroll: 4,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: true,
-        dots: true
+        <pre><code class=" language-javascript">$('.responsive').slick({
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
       }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ]
+  });</code></pre>
+
+          <hr>
+
+        <h3>Variable Width</h3>
+
+        <div class="slider variable-width">
+          <div style="width: 200px;">
+            <p>200</p>
+          </div>
+          <div style="width: 175px;">
+            <p>175</p>
+          </div>
+          <div style="width: 150px;">
+            <p>150</p>
+          </div>
+          <div style="width: 300px;">
+            <p>300</p>
+          </div>
+          <div style="width: 225px;">
+            <p>225</p>
+          </div>
+          <div style="width: 125px;">
+            <p>125</p>
+          </div>
+        </div>
+
+        <pre><code class=" language-javascript">$('.variable-width').slick({
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    centerMode: true,
+    variableWidth: true
+  });</code></pre>
+
+          <hr>
+
+        <h3>Adaptive Height</h3>
+
+        <div class="slider one-time">
+          <div>
+            <h3>1</h3>
+          </div>
+          <div>
+            <h3>2</h3>
+            <p>Look ma!</p>
+          </div>
+          <div>
+            <h3>3</h3>
+            <p>Check
+              <br>this out!</p>
+          </div>
+          <div>
+            <h3>4</h3>
+            <p>Woo!</p>
+          </div>
+        </div>
+
+        <pre><code class=" language-javascript">$('.one-time').slick({
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    adaptiveHeight: true
+  });</code></pre>
+
+          <hr>
+
+        <h3>Data Attribute Settings</h3>
+
+        <p>In slick 1.5 you can now add settings using the data-slick attribute. You still need to call $(element).slick() to initialize slick on the element.</p>
+
+        <div class="data" data-slick="{&quot;slidesToShow&quot;: 4, &quot;slidesToScroll&quot;: 4}">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+        </div>
+
+        <pre><code class=" language-markup">&lt;div data-slick='{&quot;slidesToShow&quot;: 4, &quot;slidesToScroll&quot;: 4}'&gt;
+    &lt;div&gt;&lt;h3&gt;1&lt;/h3&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;h3&gt;2&lt;/h3&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;h3&gt;3&lt;/h3&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;h3&gt;4&lt;/h3&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;h3&gt;5&lt;/h3&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;h3&gt;6&lt;/h3&gt;&lt;/div&gt;
+  &lt;/div&gt;</code></pre>
+
+          <hr>
+
+        <h3>Center Mode</h3>
+
+        <div class="slider center">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+        </div>
+
+        <pre><code class=" language-javascript">$('.center').slick({
+    centerMode: true,
+    centerPadding: '60px',
+    slidesToShow: 3,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 1
+        }
       }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-  ]
-});</code></pre>
+    ]
+  });</code></pre>
 
-        <hr>
+          <hr>
 
-      <h3>Variable Width</h3>
+        <h3>Lazy Loading</h3>
 
-      <div class="slider variable-width">
-        <div style="width: 200px;">
-          <p>200</p>
-        </div>
-        <div style="width: 175px;">
-          <p>175</p>
-        </div>
-        <div style="width: 150px;">
-          <p>150</p>
-        </div>
-        <div style="width: 300px;">
-          <p>300</p>
-        </div>
-        <div style="width: 225px;">
-          <p>225</p>
-        </div>
-        <div style="width: 125px;">
-          <p>125</p>
-        </div>
-      </div>
-
-      <pre><code class=" language-javascript">$('.variable-width').slick({
-  dots: true,
-  infinite: true,
-  speed: 300,
-  slidesToShow: 1,
-  centerMode: true,
-  variableWidth: true
-});</code></pre>
-
-        <hr>
-
-      <h3>Adaptive Height</h3>
-
-      <div class="slider one-time">
-        <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-          <p>Look ma!</p>
-        </div>
-        <div>
-          <h3>3</h3>
-          <p>Check
-            <br>this out!</p>
-        </div>
-        <div>
-          <h3>4</h3>
-          <p>Woo!</p>
-        </div>
-      </div>
-
-      <pre><code class=" language-javascript">$('.one-time').slick({
-  dots: true,
-  infinite: true,
-  speed: 300,
-  slidesToShow: 1,
-  adaptiveHeight: true
-});</code></pre>
-
-        <hr>
-
-      <h3>Data Attribute Settings</h3>
-
-      <p>In slick 1.5 you can now add settings using the data-slick attribute. You still need to call $(element).slick() to initialize slick on the element.</p>
-
-      <div class="data" data-slick="{&quot;slidesToShow&quot;: 4, &quot;slidesToScroll&quot;: 4}">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-      </div>
-
-      <pre><code class=" language-markup">&lt;div data-slick='{&quot;slidesToShow&quot;: 4, &quot;slidesToScroll&quot;: 4}'&gt;
-  &lt;div&gt;&lt;h3&gt;1&lt;/h3&gt;&lt;/div&gt;
-  &lt;div&gt;&lt;h3&gt;2&lt;/h3&gt;&lt;/div&gt;
-  &lt;div&gt;&lt;h3&gt;3&lt;/h3&gt;&lt;/div&gt;
-  &lt;div&gt;&lt;h3&gt;4&lt;/h3&gt;&lt;/div&gt;
-  &lt;div&gt;&lt;h3&gt;5&lt;/h3&gt;&lt;/div&gt;
-  &lt;div&gt;&lt;h3&gt;6&lt;/h3&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-
-        <hr>
-
-      <h3>Center Mode</h3>
-
-      <div class="slider center">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-      </div>
-
-      <pre><code class=" language-javascript">$('.center').slick({
-  centerMode: true,
-  centerPadding: '60px',
-  slidesToShow: 3,
-  responsive: [
-    {
-      breakpoint: 768,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '40px',
-        slidesToShow: 3
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '40px',
-        slidesToShow: 1
-      }
-    }
-  ]
-});</code></pre>
-
-        <hr>
-
-      <h3>Lazy Loading</h3>
-
-      <div class="slider lazy">
-        <div>
-          <div class="image">
-            <img data-lazy="images/lazyfonz1.png">
+        <div class="slider lazy">
+          <div>
+            <div class="image">
+              <img data-lazy="images/lazyfonz1.png">
+            </div>
+          </div>
+          <div>
+            <div class="image">
+              <img data-lazy="images/lazyfonz2.png">
+            </div>
+          </div>
+          <div>
+            <div class="image">
+              <img data-lazy="images/lazyfonz3.png">
+            </div>
+          </div>
+          <div>
+            <div class="image">
+              <img data-lazy="images/lazyfonz4.png">
+            </div>
+          </div>
+          <div>
+            <div class="image">
+              <img data-lazy="images/lazyfonz5.png">
+            </div>
+          </div>
+          <div>
+            <div class="image">
+              <img data-lazy="images/lazyfonz6.png">
+            </div>
           </div>
         </div>
-        <div>
-          <div class="image">
-            <img data-lazy="images/lazyfonz2.png">
+
+        <pre><code class=" language-javascript">// To use lazy loading, set a data-lazy attribute
+  // on your img tags and leave off the src
+
+  &lt;img data-lazy="img/lazyfonz1.png"/&gt;
+
+  $('.lazy').slick({
+    lazyLoad: 'ondemand',
+    slidesToShow: 3,
+    slidesToScroll: 1
+  });</code></pre>
+
+          <hr>
+
+        <h3>Autoplay</h3>
+
+        <div class="slider autoplay">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+        </div>
+
+        <pre><code class=" language-javascript">$('.autoplay').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  });</code></pre>
+
+          <hr>
+
+        <h3>Fade</h3>
+
+        <div class="slider fade">
+          <div>
+            <div class="image">
+              <img src="images/fonz1.png">
+            </div>
+          </div>
+          <div>
+            <div class="image">
+              <img src="images/fonz2.png">
+            </div>
+          </div>
+          <div>
+            <div class="image">
+              <img src="images/fonz3.png">
+            </div>
           </div>
         </div>
-        <div>
-          <div class="image">
-            <img data-lazy="images/lazyfonz3.png">
-          </div>
+
+        <pre><code class=" language-javascript">$('.fade').slick({
+    dots: true,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear'
+  });</code></pre>
+
+          <hr>
+
+        <h3>Add &amp; Remove</h3>
+
+        <div class="slider add-remove">
+          <div>1</div>
         </div>
-        <div>
-          <div class="image">
-            <img data-lazy="images/lazyfonz4.png">
-          </div>
+
+        <div class="buttons">
+          <a href="javascript:void(0)" class="button js-add-slide">Add Slide</a>
+          <a href="javascript:void(0)" class="button js-remove-slide">Remove Slide</a>
         </div>
-        <div>
-          <div class="image">
-            <img data-lazy="images/lazyfonz5.png">
-          </div>
-        </div>
-        <div>
-          <div class="image">
-            <img data-lazy="images/lazyfonz6.png">
-          </div>
-        </div>
-      </div>
 
-      <pre><code class=" language-javascript">// To use lazy loading, set a data-lazy attribute
-// on your img tags and leave off the src
-
-&lt;img data-lazy="img/lazyfonz1.png"/&gt;
-
-$('.lazy').slick({
-  lazyLoad: 'ondemand',
-  slidesToShow: 3,
-  slidesToScroll: 1
-});</code></pre>
-
-        <hr>
-
-      <h3>Autoplay</h3>
-
-      <div class="slider autoplay">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-      </div>
-
-      <pre><code class=" language-javascript">$('.autoplay').slick({
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2000,
-});</code></pre>
-
-        <hr>
-
-      <h3>Fade</h3>
-
-      <div class="slider fade">
-        <div>
-          <div class="image">
-            <img src="images/fonz1.png">
-          </div>
-        </div>
-        <div>
-          <div class="image">
-            <img src="images/fonz2.png">
-          </div>
-        </div>
-        <div>
-          <div class="image">
-            <img src="images/fonz3.png">
-          </div>
-        </div>
-      </div>
-
-      <pre><code class=" language-javascript">$('.fade').slick({
-  dots: true,
-  infinite: true,
-  speed: 500,
-  fade: true,
-  cssEase: 'linear'
-});</code></pre>
-
-        <hr>
-
-      <h3>Add &amp; Remove</h3>
-
-      <div class="slider add-remove">
-        <div>1</div>
-      </div>
-
-      <div class="buttons">
-        <a href="javascript:void(0)" class="button js-add-slide">Add Slide</a>
-        <a href="javascript:void(0)" class="button js-remove-slide">Remove Slide</a>
-      </div>
-
-      <pre><code class=" language-javascript">$('.add-remove').slick({
-  slidesToShow: 3,
-  slidesToScroll: 3
-});
-$('.js-add-slide').on('click', function() {
-  slideIndex++;
-  $('.add-remove').slick('slickAdd','<div>' + slideIndex + '</div>');
-});
-
-$('.js-remove-slide').on('click', function() {
-  $('.add-remove').slick('slickRemove',slideIndex - 1);
-  if (slideIndex !== 0){
-    slideIndex--;
-  }
-});</code></pre>
-
-        <hr>
-
-      <h3>Filtering</h3>
-
-      <div class="slider filtering">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-        <div>7</div>
-        <div>8</div>
-        <div>9</div>
-        <div>10</div>
-        <div>11</div>
-        <div>12</div>
-      </div>
-
-      <div class="filter">
-        <a href="javascript:void(0)" class="button js-filter">Filter Slides</a>
-      </div>
-
-      <pre><code class=" language-javascript">$('.filtering').slick({
-  slidesToShow: 4,
-  slidesToScroll: 4
-});
-
-var filtered = false;
-
-$('.js-filter').on('click', function(){
-  if (filtered === false) {
-    $('.filtering').slick('slickFilter',':even');
-    $(this).text('Unfilter Slides');
-    filtered = true;
-  } else {
-    $('.filtering').slick('slickUnfilter');
-    $(this).text('Filter Slides');
-    filtered = false;
-  }
-});</code></pre>
-
-        <hr>
-
-      <h3>Destroy</h3>
-
-      <p class="destroy">If you really want to be that guy...</p>
-
-      <pre><code class=" language-javascript">$('.your-slider').slick('unslick');</code></pre>
-
-        <hr>
-
-      <h3>Slider Syncing</h3>
-
-      <div class="slider slider-for">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-      </div>
-
-      <div class="slider slider-nav">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-      </div>
-
-      <pre><code class=" language-javascript"> $('.slider-for').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: false,
-  fade: true,
-  asNavFor: '.slider-nav'
-});
-$('.slider-nav').slick({
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  asNavFor: '.slider-for',
-  dots: true,
-  centerMode: true,
-  focusOnSelect: true
-});</code></pre>
-
-        <hr>
-
-      <h3>Right to Left</h3>
-
-      <div dir="rtl" class="slider single-item-rtl">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-      </div>
-
-      <pre><code class=" language-javascript">$('.single-item-rtl').slick({
-  rtl: true
-});</code></pre>
-
-      <p><strong>Note:</strong> the HTML tag or the parent of the slider must have the attribute "dir" set to "rtl".</p>
-
-        <hr>
-
-      <h4 class="more">and a whole lot more...</h4>
-    </div>
-  </section>
-
-  <section id="getting-started" class="white" tabindex="-1">
-    <div class="content">
-      <h2 class="margin-40">Getting Started</h2>
-
-      <p>Set up your HTML markup.</p>
-
-      <pre><code class=" language-markup">&lt;div class=&quot;your-class&quot;&gt;
-  &lt;div&gt;your content&lt;/div&gt;
-  &lt;div&gt;your content&lt;/div&gt;
-  &lt;div&gt;your content&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-
-        <hr>
-
-      <p>Move the /slick folder into your project</p>
-
-        <hr>
-
-      <p>Add slick.css in your &lt;head&gt;</p>
-
-      <pre><code class=" language-markup">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;slick/slick.css&quot;/&gt;
-// Add the new slick-theme.css if you want the default styling
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;slick/slick-theme.css&quot;/&gt;</code></pre>
-
-        <hr>
-
-      <p>Add slick.js before your closing &lt;body&gt; tag, after jQuery (requires jQuery 1.7 +)</p>
-
-      <pre><code class=" language-markup">&lt;script type=&quot;text/javascript&quot; src=&quot;//code.jquery.com/jquery-1.11.0.min.js&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;//code.jquery.com/jquery-migrate-1.2.1.min.js&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;slick/slick.min.js&quot;&gt;&lt;/script&gt;</code></pre>
-
-        <hr>
-
-      <p>Initialize your slider in your script file or an inline script tag</p>
-
-      <pre><code class=" language-javascript">$(document).ready(function(){
-  $('.your-class').slick({
-    setting-name: setting-value
+        <pre><code class=" language-javascript">$('.add-remove').slick({
+    slidesToShow: 3,
+    slidesToScroll: 3
   });
-});</code></pre>
+  $('.js-add-slide').on('click', function() {
+    slideIndex++;
+    $('.add-remove').slick('slickAdd','<div>' + slideIndex + '</div>');
+  });
 
-        <hr>
+  $('.js-remove-slide').on('click', function() {
+    $('.add-remove').slick('slickRemove',slideIndex - 1);
+    if (slideIndex !== 0){
+      slideIndex--;
+    }
+  });</code></pre>
 
-      <p>When complete, your HTML should look something like:</p>
+          <hr>
 
-      <pre><code class=" language-markup">&lt;html&gt;
-  &lt;head&gt;
-  &lt;title&gt;My Now Amazing Webpage&lt;/title&gt;
-  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;slick/slick.css&quot;/&gt;
-  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;slick/slick-theme.css&quot;/&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
+        <h3>Filtering</h3>
 
-  &lt;div class=&quot;your-class&quot;&gt;
+        <div class="slider filtering">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+          <div>10</div>
+          <div>11</div>
+          <div>12</div>
+        </div>
+
+        <div class="filter">
+          <a href="javascript:void(0)" class="button js-filter">Filter Slides</a>
+        </div>
+
+        <pre><code class=" language-javascript">$('.filtering').slick({
+    slidesToShow: 4,
+    slidesToScroll: 4
+  });
+
+  var filtered = false;
+
+  $('.js-filter').on('click', function(){
+    if (filtered === false) {
+      $('.filtering').slick('slickFilter',':even');
+      $(this).text('Unfilter Slides');
+      filtered = true;
+    } else {
+      $('.filtering').slick('slickUnfilter');
+      $(this).text('Filter Slides');
+      filtered = false;
+    }
+  });</code></pre>
+
+          <hr>
+
+        <h3>Destroy</h3>
+
+        <p class="destroy">If you really want to be that guy...</p>
+
+        <pre><code class=" language-javascript">$('.your-slider').slick('unslick');</code></pre>
+
+          <hr>
+
+        <h3>Slider Syncing</h3>
+
+        <div class="slider slider-for">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+        </div>
+
+        <div class="slider slider-nav">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+        </div>
+
+        <pre><code class=" language-javascript"> $('.slider-for').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '.slider-nav'
+  });
+  $('.slider-nav').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    asNavFor: '.slider-for',
+    dots: true,
+    centerMode: true,
+    focusOnSelect: true
+  });</code></pre>
+
+          <hr>
+
+        <h3>Right to Left</h3>
+
+        <div dir="rtl" class="slider single-item-rtl">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+        </div>
+
+        <pre><code class=" language-javascript">$('.single-item-rtl').slick({
+    rtl: true
+  });</code></pre>
+
+        <p><strong>Note:</strong> the HTML tag or the parent of the slider must have the attribute "dir" set to "rtl".</p>
+
+          <hr>
+
+        <h4 class="more">and a whole lot more...</h4>
+      </div>
+    </section>
+
+    <section id="getting-started" class="white" tabindex="-1">
+      <div class="content">
+        <h2 class="margin-40">Getting Started</h2>
+
+        <p>Set up your HTML markup.</p>
+
+        <pre><code class=" language-markup">&lt;div class=&quot;your-class&quot;&gt;
     &lt;div&gt;your content&lt;/div&gt;
     &lt;div&gt;your content&lt;/div&gt;
     &lt;div&gt;your content&lt;/div&gt;
-  &lt;/div&gt;
+  &lt;/div&gt;</code></pre>
 
-  &lt;script type=&quot;text/javascript&quot; src=&quot;//code.jquery.com/jquery-1.11.0.min.js&quot;&gt;&lt;/script&gt;
+          <hr>
+
+        <p>Move the /slick folder into your project</p>
+
+          <hr>
+
+        <p>Add slick.css in your &lt;head&gt;</p>
+
+        <pre><code class=" language-markup">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;slick/slick.css&quot;/&gt;
+  // Add the new slick-theme.css if you want the default styling
+  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;slick/slick-theme.css&quot;/&gt;</code></pre>
+
+          <hr>
+
+        <p>Add slick.js before your closing &lt;body&gt; tag, after jQuery (requires jQuery 1.7 +)</p>
+
+        <pre><code class=" language-markup">&lt;script type=&quot;text/javascript&quot; src=&quot;//code.jquery.com/jquery-1.11.0.min.js&quot;&gt;&lt;/script&gt;
   &lt;script type=&quot;text/javascript&quot; src=&quot;//code.jquery.com/jquery-migrate-1.2.1.min.js&quot;&gt;&lt;/script&gt;
-  &lt;script type=&quot;text/javascript&quot; src=&quot;slick/slick.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;slick/slick.min.js&quot;&gt;&lt;/script&gt;</code></pre>
 
-  &lt;script type=&quot;text/javascript&quot;&gt;
-    $(document).ready(function(){
-      $('.your-class').slick({
-        setting-name: setting-value
-      });
+          <hr>
+
+        <p>Initialize your slider in your script file or an inline script tag</p>
+
+        <pre><code class=" language-javascript">$(document).ready(function(){
+    $('.your-class').slick({
+      setting-name: setting-value
     });
-  &lt;/script&gt;
+  });</code></pre>
 
-  &lt;/body&gt;
-&lt;/html&gt;</code></pre>
+          <hr>
 
-      <p class="note">NOTE: I highly recommend putting your initialization script in an external JS file.</p>
-    </div>
-  </section>
+        <p>When complete, your HTML should look something like:</p>
 
-  <section id="settings" class="blue" tabindex="-1">
-    <div class="content">
-      <h2>Settings</h2>
+        <pre><code class=" language-markup">&lt;html&gt;
+    &lt;head&gt;
+    &lt;title&gt;My Now Amazing Webpage&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;slick/slick.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;slick/slick-theme.css&quot;/&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
 
-      Same settings apply
+    &lt;div class=&quot;your-class&quot;&gt;
+      &lt;div&gt;your content&lt;/div&gt;
+      &lt;div&gt;your content&lt;/div&gt;
+      &lt;div&gt;your content&lt;/div&gt;
+    &lt;/div&gt;
 
-      <h2>Events</h2>
+    &lt;script type=&quot;text/javascript&quot; src=&quot;//code.jquery.com/jquery-1.11.0.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;//code.jquery.com/jquery-migrate-1.2.1.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;slick/slick.min.js&quot;&gt;&lt;/script&gt;
 
-      See original documentation
+    &lt;script type=&quot;text/javascript&quot;&gt;
+      $(document).ready(function(){
+        $('.your-class').slick({
+          setting-name: setting-value
+        });
+      });
+    &lt;/script&gt;
 
-      <h2>Methods</h2>
+    &lt;/body&gt;
+  &lt;/html&gt;</code></pre>
+
+        <p class="note">NOTE: I highly recommend putting your initialization script in an external JS file.</p>
+      </div>
+    </section>
+
+    <section id="settings" class="blue" tabindex="-1">
+      <div class="content">
+        <h2>Settings</h2>
+
+        Same settings apply
+
+        <h2>Events</h2>
+
+        See original documentation
+
+        <h2>Methods</h2>
 
 
-    </div>
-  </section>
+      </div>
+    </section>
 
-  <section id="go-get-it" class="white" tabindex="-1">
-    <div class="content">
-      <h2>Go Get It</h2>
+    <section id="go-get-it" class="white" tabindex="-1">
+      <div class="content">
+        <h2>Go Get It</h2>
 
-      <a class="button first" href="https://github.com/kenwheeler/slick/archive/v1.8.1.zip">Download Now</a>
-      <a class="button last" href="https://github.com/kenwheeler/slick/">View On Github</a>
+        <a class="button first" href="https://github.com/kenwheeler/slick/archive/v1.8.1.zip">Download Now</a>
+        <a class="button last" href="https://github.com/kenwheeler/slick/">View On Github</a>
 
-        <hr>
+          <hr>
 
-      <p class="cdn">You can also use slick with the jsDelivr CDN!</p>
+        <p class="cdn">You can also use slick with the jsDelivr CDN!</p>
 
-      <pre><code class=" language-markup">CSS
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;//cdn.jsdelivr.net/npm/accessible-slick-carousel@1.8.1/slick/slick.min.css&quot;/&gt;
+        <pre><code class=" language-markup">CSS
+  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;//cdn.jsdelivr.net/npm/accessible-slick-carousel@1.8.1/slick/slick.min.css&quot;/&gt;
 
-JS
-&lt;script type=&quot;text/javascript&quot; src=&quot;//cdn.jsdelivr.net/npm/accessible-slick-carousel@1.8.1/slick/slick.min.js&quot;&gt;&lt;/script&gt;</code></pre>
-    </div>
-  </section>
+  JS
+  &lt;script type=&quot;text/javascript&quot; src=&quot;//cdn.jsdelivr.net/npm/accessible-slick-carousel@1.8.1/slick/slick.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+      </div>
+    </section>
+  </main>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="../slick/slick.min.js"></script>
