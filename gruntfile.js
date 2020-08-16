@@ -56,6 +56,18 @@ module.exports = function(grunt) {
           ext: '.min.js'
         }]
       }
+    },
+
+    // Automatically kick off rebuilds when source file changes are detected
+    watch: {
+      css: {
+        files: ['slick/*.scss'],
+        tasks: ['sass','postcss','cssmin']
+      },
+      js: {
+        files: ['slick/*.js','!slick/*.min.js'],
+        tasks: ['uglify']
+      }
     }
   });
 
@@ -63,6 +75,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('default', ['sass','postcss','cssmin', 'uglify']);
 };

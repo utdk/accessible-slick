@@ -27,5 +27,11 @@ gulp.task('build:js', function() {
     .pipe(gulp.dest('slick'));
 });
 
+// Watch source files for changes and automatically rebuild them when change are saved
+gulp.task('watch', function() {
+  gulp.watch('slick/*.scss', gulp.series(['build:css']));
+  gulp.watch(['slick/*.js', '!slick/*.min.js'], gulp.series(['build:js']));
+});
+
 // Default task executes a fresh build of custom JS
 gulp.task('default', gulp.series('clean','build:js','build:css'));
