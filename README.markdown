@@ -68,5 +68,27 @@ All of the original settings, events, and other API features are available, so y
 
 
 ## Development
+If you'd like to contribute changes or just make modifications for your own use, use the following process:
 
-`TODO: pending replacement of Makefile-based build system with something else.`
+1. Install all the dev dependencies with NPM:
+
+```sh
+npm install
+```
+
+2. Make your changes to the source files. You'll want to focus on:
+    * `slick/slick.js`
+    * `slick/slick.scss`
+    * `slick/slick-theme.scss`
+
+3. Build! Multiple build systems are available to help with future-proofing. Use whichever one you like - the output is the same!
+
+```sh
+# Build with Gulp (see gulpfile.js)
+gulp
+
+# OR build with Grunt (see gruntfile.js)
+grunt
+```
+
+4. Check your changes by loading up `docs/index.html` in your browser.
