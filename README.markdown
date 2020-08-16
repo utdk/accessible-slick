@@ -48,14 +48,19 @@ In the short term, we're releasing our take on an accessible Slick Slider implem
 
 `TODO`
 
-### Feature additions
+### New features ✨
 
-`TODO: list out new features with reasoning.`
+Feature | Why
+--------|----
+Wrapper now has `role="region"` and a configurable `aria-label` | Tells screen reader users exactly where the carousel begins and ends in the DOM and gives them a landmark they can jump to or skip easily. Use the [`regionLabel` setting](#new-settings) to change the `aria-label` text (defaults to `'carousel'`).
 
-### Feature changes
+### Feature changes ⚠️
 
 `TODO: list out changes made to original package with reasoning.`
 
+### Deprecated features ❌
+
+`TODO: list out old features that no longer do anything.`
 
 ## Usage
 
@@ -65,6 +70,12 @@ All of the original settings, events, and other API features are available, so y
 * [Settings](https://github.com/kenwheeler/slick#settings)
 * [Events](https://github.com/kenwheeler/slick#events)
 * [Methods](https://github.com/kenwheeler/slick#methods)
+
+### New settings
+
+Setting | Type | Default | Description
+--------|------|---------|------------
+regionLabel | string | 'carousel' | Text to use for the `aria-label` that is placed on the wrapper (see [New features](#new-features) section for details).
 
 
 ## Development

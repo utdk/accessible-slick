@@ -69,6 +69,7 @@
                 pauseOnHover: true,
                 pauseOnFocus: true,
                 pauseOnDotsHover: false,
+                regionLabel: 'carousel',
                 respondTo: 'window',
                 responsive: null,
                 rows: 1,
@@ -520,6 +521,9 @@
         });
 
         _.$slider.addClass('slick-slider');
+
+        _.$slider.attr('role', 'region');
+        _.$slider.attr('aria-label', _.options.regionLabel);
 
         _.$slideTrack = (_.slideCount === 0) ?
             $('<div class="slick-track"/>').appendTo(_.$slider) :
@@ -1019,7 +1023,7 @@
             .off('focus.slick blur.slick')
             .on(
                 'focus.slick',
-                '*', 
+                '*',
                 function(event) {
                     var $sf = $(this);
 
@@ -1034,7 +1038,7 @@
                 }
             ).on(
                 'blur.slick',
-                '*', 
+                '*',
                 function(event) {
                     var $sf = $(this);
 
