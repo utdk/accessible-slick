@@ -78,25 +78,35 @@ $slick-opacity-not-active: 0.25 !default;
     padding: 0;
     border: none;
     outline: none;
+
     &:hover, &:focus {
-        outline: none;
-        background: transparent;
-        color: transparent;
-        &:before {
-            opacity: $slick-opacity-on-hover;
+        .slick-prev-icon, .slick-next-icon {
+            &:before {
+                opacity: $slick-opacity-on-hover;
+            }
         }
     }
-    &.slick-disabled:before {
-        opacity: $slick-opacity-not-active;
+
+    &.slick-disabled {
+        cursor: default;
+
+        .slick-prev-icon, .slick-next-icon {
+            &:before {
+                opacity: $slick-opacity-not-active;
+            }
+        }
     }
-    &:before {
-        font-family: $slick-font-family;
-        font-size: 20px;
-        line-height: 1;
-        color: $slick-arrow-color;
-        opacity: $slick-opacity-default;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
+
+    .slick-prev-icon, .slick-next-icon {
+        &:before {
+            font-family: $slick-font-family;
+            font-size: 20px;
+            line-height: 1;
+            color: $slick-arrow-color;
+            opacity: $slick-opacity-default;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
     }
 }
 
@@ -106,10 +116,13 @@ $slick-opacity-not-active: 0.25 !default;
         left: auto;
         right: -25px;
     }
-    &:before {
-        content: $slick-prev-character;
-        [dir="rtl"] & {
-            content: $slick-next-character;
+
+    .slick-prev-icon {
+        &:before {
+            content: $slick-prev-character;
+            [dir="rtl"] & {
+                content: $slick-next-character;
+            }
         }
     }
 }
@@ -120,10 +133,13 @@ $slick-opacity-not-active: 0.25 !default;
         left: -25px;
         right: auto;
     }
-    &:before {
-        content: $slick-next-character;
-        [dir="rtl"] & {
-            content: $slick-prev-character;
+
+    .slick-next-icon {
+        &:before {
+            content: $slick-next-character;
+            [dir="rtl"] & {
+                content: $slick-prev-character;
+            }
         }
     }
 }
@@ -191,4 +207,21 @@ $slick-opacity-not-active: 0.25 !default;
             opacity: $slick-opacity-default;
         }
     }
+}
+
+/**
+ Improved .sr-only class by ffoodd: https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034
+ */
+.slick-sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+	-webkit-clip-path: inset(50%) !important;
+		clip-path: inset(50%) !important;  /* 2 */
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;            /* 3 */
 }
