@@ -52,11 +52,13 @@ In the short term, we're releasing our take on an accessible Slick Slider implem
 
 Feature | Why
 --------|----
-Wrapper now has `role="region"` and a configurable `aria-label` | Tells screen reader users exactly where the carousel begins and ends in the DOM and gives them a landmark they can jump to or skip easily. Use the [`regionLabel` setting](#new-settings) to change the `aria-label` text (defaults to `'carousel'`).
+[Wrapper](https://github.com/Accessible360/accessible-slick/issues/7) now has `role="region"` and a configurable `aria-label` | Tells screen reader users exactly where the carousel begins and ends in the DOM and gives them a landmark they can jump to or skip easily. Use the [`regionLabel` setting](#new-settings) to change the `aria-label` text (defaults to `'carousel'`).
 
 ### Feature changes ⚠️
 
-`TODO: list out changes made to original package with reasoning.`
+Feature | Why
+--------|----
+[Previous and Next button markup](https://github.com/Accessible360/accessible-slick/issues/8) improved to no longer use `aria-label`, and to safely hide the icons from screen readers | See the [First Rule of ARIA Use](https://www.w3.org/TR/using-aria/#rule1). Also, custom font icons are read out as "unrecognizable characters" by screen readers, so they need to be hidden from them.
 
 ### Deprecated features ❌
 
