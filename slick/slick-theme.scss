@@ -181,28 +181,30 @@ $slick-opacity-not-active: 0.25 !default;
             cursor: pointer;
             &:hover, &:focus {
                 outline: none;
-                &:before {
+                .slick-dot-icon:before {
                     opacity: $slick-opacity-on-hover;
                 }
             }
-            &:before {
-                position: absolute;
-                top: 0;
-                left: 0;
-                content: $slick-dot-character;
-                width: 20px;
-                height: 20px;
-                font-family: $slick-font-family;
-                font-size: $slick-dot-size;
-                line-height: 20px;
-                text-align: center;
-                color: $slick-dot-color;
-                opacity: $slick-opacity-not-active;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
+            .slick-dot-icon {
+                &:before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    content: $slick-dot-character;
+                    width: 20px;
+                    height: 20px;
+                    font-family: $slick-font-family;
+                    font-size: $slick-dot-size;
+                    line-height: 20px;
+                    text-align: center;
+                    color: $slick-dot-color;
+                    opacity: $slick-opacity-not-active;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                }
             }
         }
-        &.slick-active button:before {
+        &.slick-active button .slick-dot-icon:before {
             color: $slick-dot-color-active;
             opacity: $slick-opacity-default;
         }
