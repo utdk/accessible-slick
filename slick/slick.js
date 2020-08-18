@@ -69,8 +69,6 @@
                 easing: 'linear',
                 edgeFriction: 0.35,
                 fade: false,
-                focusOnSelect: false,
-                focusOnChange: false,
                 infinite: true,
                 initialSlide: 0,
                 lazyLoad: 'ondemand',
@@ -792,10 +790,6 @@
             _.$list.off('keydown.slick', _.keyHandler);
         }
 
-        if (_.options.focusOnSelect === true) {
-            $(_.$slideTrack).children().off('click.slick', _.selectHandler);
-        }
-
         $(window).off('orientationchange.slick.slick-' + _.instanceUid, _.orientationChange);
 
         $(window).off('resize.slick.slick-' + _.instanceUid, _.resize);
@@ -1317,6 +1311,14 @@
 
         _.updateSlideVisibility();
 
+        if(_.options.focusOnChange != undefined) {
+            console.warn('focusOnChange is no longer supported.');
+        }
+
+        if(_.options.focusOnSelect != undefined) {
+            console.warn('focusOnSelect is no longer supported.');
+        }
+
     };
 
     Slick.prototype.initArrowEvents = function() {
@@ -1404,10 +1406,6 @@
 
         if (_.options.accessibility === true) {
             _.$list.on('keydown.slick', _.keyHandler);
-        }
-
-        if (_.options.focusOnSelect === true) {
-            $(_.$slideTrack).children().on('click.slick', _.selectHandler);
         }
 
         $(window).on('orientationchange.slick.slick-' + _.instanceUid, $.proxy(_.orientationChange, _));
@@ -1654,11 +1652,6 @@
 
             if (_.options.accessibility === true) {
                 _.updateSlideVisibility();
-
-                if (_.options.focusOnChange) {
-                    var $currentSlide = $(_.$slides.get(_.currentSlide));
-                    $currentSlide.attr('tabindex', 0).focus();
-                }
             }
 
         }
@@ -1879,10 +1872,6 @@
         _.initSlideEvents();
 
         _.checkResponsive(false, true);
-
-        if (_.options.focusOnSelect === true) {
-            $(_.$slideTrack).children().on('click.slick', _.selectHandler);
-        }
 
         _.setSlideClasses(typeof _.currentSlide === 'number' ? _.currentSlide : 0);
 
