@@ -38,7 +38,6 @@
             var _ = this, dataSettings;
 
             _.defaults = {
-                accessibility: true,
                 adaptiveHeight: false,
                 appendArrows: $(element),
                 appendDots: $(element),
@@ -1301,6 +1300,10 @@
 
         _.updateSlideVisibility();
 
+        if(_.options.accessibility != undefined) {
+            console.warn('accessibility setting is no longer supported.')
+        }
+
         if(_.options.focusOnChange != undefined) {
             console.warn('focusOnChange is no longer supported.');
         }
@@ -1609,9 +1612,7 @@
                 _.autoPlay();
             }
 
-            if (_.options.accessibility === true) {
-                _.updateSlideVisibility();
-            }
+            _.updateSlideVisibility();
 
         }
 
