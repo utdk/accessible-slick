@@ -198,17 +198,6 @@
 
     }());
 
-    Slick.prototype.activateADA = function() {
-        var _ = this;
-
-        _.$slideTrack.find('.slick-active').attr({
-            'aria-hidden': 'false'
-        }).find('a, input, button, select').attr({
-            'tabindex': '0'
-        });
-
-    };
-
     Slick.prototype.addSlide = Slick.prototype.slickAdd = function(markup, index, addBefore) {
 
         var _ = this;
@@ -1319,10 +1308,6 @@
             _.$slider.trigger('init', [_]);
         }
 
-        if (_.options.accessibility === true) {
-            _.initADA();
-        }
-
         if ( _.options.autoplay ) {
 
             _.paused = false;
@@ -1330,31 +1315,7 @@
 
         }
 
-    };
-
-    Slick.prototype.initADA = function() {
-        var _ = this,
-                numDotGroups = Math.ceil(_.slideCount / _.options.slidesToShow),
-                tabControlIndexes = _.getNavigableIndexes().filter(function(val) {
-                    return (val >= 0) && (val < _.slideCount);
-                });
-
-        _.$slides.add(_.$slideTrack.find('.slick-cloned')).attr({
-            'aria-hidden': 'true',
-            'tabindex': '-1'
-        }).find('a, input, button, select').attr({
-            'tabindex': '-1'
-        });
-
-        for (var i=_.currentSlide, max=i+_.options.slidesToShow; i < max; i++) {
-          if (_.options.focusOnChange) {
-            _.$slides.eq(i).attr({'tabindex': '0'});
-          } else {
-            _.$slides.eq(i).removeAttr('tabindex');
-          }
-        }
-
-        _.activateADA();
+        _.updateSlideVisibility();
 
     };
 
@@ -1692,7 +1653,7 @@
             }
 
             if (_.options.accessibility === true) {
-                _.initADA();
+                _.updateSlideVisibility();
 
                 if (_.options.focusOnChange) {
                     var $currentSlide = $(_.$slides.get(_.currentSlide));
@@ -2302,7 +2263,7 @@
                     _.$slides
                         .slice(index - centerOffset + evenCoef, index + centerOffset + 1)
                         .addClass('slick-active')
-                        .attr('aria-hidden', 'false');
+                        .removeAttr('aria-hidden');
 
                 } else {
 
@@ -2310,7 +2271,7 @@
                     allSlides
                         .slice(indexOffset - centerOffset + 1 + evenCoef, indexOffset + centerOffset + 2)
                         .addClass('slick-active')
-                        .attr('aria-hidden', 'false');
+                        .removeAttr('aria-hidden');
 
                 }
 
@@ -2341,13 +2302,13 @@
                 _.$slides
                     .slice(index, index + _.options.slidesToShow)
                     .addClass('slick-active')
-                    .attr('aria-hidden', 'false');
+                    .removeAttr('aria-hidden');
 
             } else if (allSlides.length <= _.options.slidesToShow) {
 
                 allSlides
                     .addClass('slick-active')
-                    .attr('aria-hidden', 'false');
+                    .removeAttr('aria-hidden');
 
             } else {
 
@@ -2359,14 +2320,14 @@
                     allSlides
                         .slice(indexOffset - (_.options.slidesToShow - remainder), indexOffset + remainder)
                         .addClass('slick-active')
-                        .attr('aria-hidden', 'false');
+                        .removeAttr('aria-hidden');
 
                 } else {
 
                     allSlides
                         .slice(indexOffset, indexOffset + _.options.slidesToShow)
                         .addClass('slick-active')
-                        .attr('aria-hidden', 'false');
+                        .removeAttr('aria-hidden');
 
                 }
 
@@ -2966,6 +2927,22 @@
         }
 
     };
+
+    Slick.prototype.updateSlideVisibility = function() {
+        var _ = this;
+
+        _.$slideTrack
+            .find('.slick-slide')
+                .attr('aria-hidden', 'true')
+                .find('a, input, button, select')
+                    .attr('tabindex', '-1');
+
+        _.$slideTrack
+            .find('.slick-active')
+                .removeAttr('aria-hidden')
+                .find('a, input, button, select')
+                    .removeAttr('tabindex');
+    }
 
     Slick.prototype.visibility = function() {
 
