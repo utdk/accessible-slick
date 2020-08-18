@@ -90,6 +90,7 @@
                 touchMove: true,
                 touchThreshold: 5,
                 useCSS: true,
+                useGroupRole: true,
                 useTransform: true,
                 variableWidth: false,
                 vertical: false,
@@ -512,6 +513,12 @@
             $(element)
                 .attr('data-slick-index', index)
                 .data('originalStyling', $(element).attr('style') || '');
+
+            if(_.options.useGroupRole) {
+                $(element)
+                    .attr('role', 'group')
+                    .attr('aria-label', 'slide ' + (index + 1));
+            }
         });
 
         _.$slider.addClass('slick-slider');
