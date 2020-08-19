@@ -89,6 +89,7 @@
                 swipeToSlide: false,
                 touchMove: true,
                 touchThreshold: 5,
+                useAutoplayToggleButton: true,
                 useCSS: true,
                 useGroupRole: true,
                 useTransform: true,
@@ -112,6 +113,7 @@
                 listHeight: null,
                 loadIndex: 0,
                 $nextArrow: null,
+                $pauseButton: null,
                 $prevArrow: null,
                 scrolling: false,
                 slideCount: null,
@@ -171,6 +173,7 @@
             _.autoPlay = $.proxy(_.autoPlay, _);
             _.autoPlayClear = $.proxy(_.autoPlayClear, _);
             _.autoPlayIterator = $.proxy(_.autoPlayIterator, _);
+            _.autoPlayToggleHandler = $.proxy(_.autoPlayToggleHandler, _);
             _.changeSlide = $.proxy(_.changeSlide, _);
             _.clickHandler = $.proxy(_.clickHandler, _);
             _.selectHandler = $.proxy(_.selectHandler, _);
@@ -431,6 +434,28 @@
 
     };
 
+    Slick.prototype.autoPlayToggleHandler = function() {
+        var _ = this;
+
+        if(_.paused) {
+            _.$pauseButton.find('.slick-play-icon').attr('style', 'display: none');
+            _.$pauseButton.find('.slick-pause-icon').removeAttr('style');
+
+            _.$pauseButton.find('.slick-play-text').attr('style', 'display: none');
+            _.$pauseButton.find('.slick-pause-text').removeAttr('style');
+
+            _.slickPlay();
+        } else {
+            _.$pauseButton.find('.slick-play-icon').removeAttr('style');
+            _.$pauseButton.find('.slick-pause-icon').attr('style', 'display: none');
+
+            _.$pauseButton.find('.slick-play-text').removeAttr('style');
+            _.$pauseButton.find('.slick-pause-text').attr('style', 'display: none');
+
+            _.slickPause();
+        }
+    };
+
     Slick.prototype.buildArrows = function() {
 
         var _ = this;
@@ -553,6 +578,17 @@
 
         if (_.options.draggable === true) {
             _.$list.addClass('draggable');
+        }
+
+        if ( _.options.autoplay && _.options.useAutoplayToggleButton ) {
+            _.$pauseButton = $('<button type="button" class="slick-autoplay-toggle-button">'
+                                + '<span class="slick-pause-icon" aria-hidden="true"></span>'
+                                + '<span class="slick-play-icon" aria-hidden="true" style="display: none"></span>'
+                                + '<span class="slick-pause-text slick-sr-only">Pause</span>'
+                                + '<span class="slick-play-text slick-sr-only" style="display: none">Play</span>'
+                              + '</button>');
+
+            _.$pauseButton.prependTo(_.$slider);
         }
 
     };
@@ -760,6 +796,10 @@
 
         var _ = this;
 
+        if(_.options.autoplay && _.options.useAutoplayToggleButton) {
+            _.$pauseButton.off('click.slick', _.autoPlayToggleHandler);
+        }
+
         if (_.options.dots && _.$dots !== null) {
 
             $('li', _.$dots)
@@ -840,6 +880,10 @@
         _.cleanUpEvents();
 
         $('.slick-cloned', _.$slider).detach();
+
+        if(_.options.autoplay && _.options.useAutoplayToggleButton) {
+            _.$pauseButton.remove();
+        }
 
         if (_.$dots) {
             _.$dots.remove();
@@ -1381,6 +1425,10 @@
 
         _.initDotEvents();
         _.initSlideEvents();
+
+        if(_.options.autoplay && _.options.useAutoplayToggleButton) {
+            _.$pauseButton.on('click.slick', _.autoPlayToggleHandler);
+        }
 
         _.$list.on('touchstart.slick mousedown.slick', {
             action: 'start'

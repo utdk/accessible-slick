@@ -98,3 +98,25 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
+.slick-autoplay-toggle-button {
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+.slick-pause-icon {
+    display: block;
+    box-sizing: border-box;
+    width: 10px;
+    height: 12px;
+    border-right: 4px solid black;
+    border-left: 4px solid black;
+}
+.slick-play-icon {
+    display: block;
+    box-sizing: border-box;
+    width: 10px;
+    height: 12px;
+    border-top: 6px solid transparent;
+    border-left: 10px solid black;
+    border-bottom: 6px solid transparent;
+}

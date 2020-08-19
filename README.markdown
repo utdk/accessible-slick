@@ -54,6 +54,7 @@ Feature | Why
 --------|----
 [Wrapper](https://github.com/Accessible360/accessible-slick/issues/7) now has `role="region"` and a configurable `aria-label`. | Tells screen reader users exactly where the carousel begins and ends in the DOM and gives them a landmark they can jump to or skip easily. Use the [`regionLabel` setting](#new-settings-) to change the `aria-label` text (defaults to `'carousel'`).
 [Each slide](https://github.com/Accessible360/accessible-slick/issues/9) now has `role="group"` with a generic, numbered `aria-label`. | Tells screen reader users exactly where each individual slide begins and ends in the DOM. It should fit the vast majority of use cases, but if you _really_ want to disable it you can do so with the new [`useGroupRole` setting](#new-settings-).
+Enabling autoplay now automatically adds a [pause/play toggle button](https://github.com/Accessible360/accessible-slick/issues/13) as the first focusable element. | [WCAG 2.2.2](https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html) requires that all auto-updating content comes with a way to pause, stop, or hide it. For carousels, pause/play icon buttons are the most familiar option. Since autoplay is so disruptive for keyboard and screen reader users, as well as people with certain cognitive conditions, the button is the very first piece of content in the slider so it can be reached right away.
 
 ### Feature changes ⚠️
 
@@ -81,6 +82,7 @@ Setting | Type | Default | Description
 --------|------|---------|------------
 regionLabel | string | 'carousel' | Text to use for the `aria-label` that is placed on the wrapper.
 useGroupRole | boolean | true | Controls whether `role="group"` and an `aria-label` are applied to each slide.
+useAutoplayToggleButton | boolean | true | Controls whether a pause/play icon button is added when autoplay is enabled. Setting this to `false` without providing an alternative control would likely violate [WCAG 2.2.2](https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html), so be careful!
 
 ### Deprecated settings ❌
 
@@ -88,7 +90,6 @@ Setting | Reason(s)
 --------|----------
 focusOnChange | Per [WCAG 3.2.2](https://www.w3.org/WAI/WCAG21/Understanding/on-input.html) and user research, keyboard focus should never be moved unless the user is told ahead of time. Even if explaining, moving focus like this would suck for keyboard users, so this setting had to go. [See issue #11](https://github.com/Accessible360/accessible-slick/issues/11).
 focusOnSelect | Unnecessary since keyboard navigation has been removed. Even with keyboard navigation, tab stops on non-actionable elements is very strange for keyboard users, and really just adds work for them. [See issue #11](https://github.com/Accessible360/accessible-slick/issues/11).
-accessibility | Equal access should not be a feature that can be turned off. This setting actually made the slides _less_ accessible by introducing unintuitive tab markup, keyboard navigation that conflicts with screen readers, and more. [See issue #12](https://github.com/Accessible360/accessible-slick/issues/12).
 
 
 ## Development
