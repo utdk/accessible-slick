@@ -50,19 +50,53 @@ This package implements the following changes, all of which have been tested and
 
 ### New features ✨
 
-Feature | Why
---------|----
-[Wrapper](https://github.com/Accessible360/accessible-slick/issues/7) now has `role="region"` and a configurable `aria-label`. | Tells screen reader users exactly where the carousel begins and ends in the DOM and gives them a landmark they can jump to or skip easily. Use the [`regionLabel` setting](#new-settings-) to change the `aria-label` text (defaults to `'carousel'`).
-[Each slide](https://github.com/Accessible360/accessible-slick/issues/9) now has `role="group"` with a generic, numbered `aria-label`. | Tells screen reader users exactly where each individual slide begins and ends in the DOM. It should fit the vast majority of use cases, but if you _really_ want to disable it you can do so with the new [`useGroupRole` setting](#new-settings-).
-Enabling autoplay now automatically adds a [pause/play toggle button](https://github.com/Accessible360/accessible-slick/issues/13) as the first focusable element. | [WCAG 2.2.2](https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html) requires that all auto-updating content comes with a way to pause, stop, or hide it. For carousels, pause/play icon buttons are the most familiar option. Since autoplay is so disruptive for keyboard and screen reader users, as well as people with certain cognitive conditions, the button is the very first piece of content in the slider so it can be reached right away.
+<table>
+  <thead>
+    <tr>
+      <th scope="col" width="50%" align="left">Feature</th>
+      <th scope="col" align="left">Why</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr valign="top">
+      <th scope="row" align="left"><a href="https://github.com/Accessible360/accessible-slick/issues/7">Wrapper</a> now has <code>role="region"</code> and a configurable <code>aria-label</code>.</th>
+      <td>Tells screen reader users exactly where the carousel begins and ends in the DOM and gives them a landmark they can jump to or skip easily. Use the <a href="#new-settings-"><code>regionLabel</code> setting</a> to change the <code>aria-label</code> text (defaults to <code>'carousel'</code>).</td>
+    </tr>
+    <tr valign="top">
+      <th scope="row" align="left"><a href="https://github.com/Accessible360/accessible-slick/issues/9">Each slide</a> now has <code>role="group"</code> with a generic, numbered <code>aria-label</code>.</th>
+      <td>Tells screen reader users exactly where each individual slide begins and ends in the DOM. It should fit the vast majority of use cases, but if you <em>really</em> want to disable it you can do so with the new <a href="#new-settings-"><code>useGroupRole</code> setting</a>.</td>
+    </tr>
+    <tr valign="top">
+      <th scope="row" align="left">Enabling autoplay now automatically adds a <a href="https://github.com/Accessible360/accessible-slick/issues/13">pause/play toggle button</a> as the first focusable element.</th>
+      <td><a href="https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html">WCAG 2.2.2</a> requires that all auto-updating content comes with a way to pause, stop, or hide it. For carousels, pause/play icon buttons are the most familiar option. Since autoplay is so disruptive for keyboard and screen reader users, as well as people with certain cognitive conditions, the button is the very first piece of content in the slider so it can be reached right away.</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Feature changes ⚠️
 
-Feature | Why
---------|----
-[Previous and Next button markup](https://github.com/Accessible360/accessible-slick/issues/8) improved to no longer use `aria-label`, and to safely hide the icons from screen readers. | See the [First Rule of ARIA Use](https://www.w3.org/TR/using-aria/#rule1). Also, custom font icons are read out as "unrecognizable characters" by screen readers, so they need to be hidden from them.
-Tab markup is no longer used for [slide dots](https://github.com/Accessible360/accessible-slick/issues/10) or [slides](https://github.com/Accessible360/accessible-slick/issues/9). | Carousels [don't look like tabs](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html), so real users wouldn't expect them to work like tabs, especially when there are multiple slides visible at a time.
-Keyboard navigation with the `Left` and `Right` arrow keys [has been removed](https://github.com/Accessible360/accessible-slick/issues/15). | The `Left` and `Right` keys are already used by screen readers for virtual cursor navigation, and other users have no reason to expect this functionality exists without visible instructions or clues.
+<table>
+  <thead>
+    <tr>
+      <th scope="col" width="50%" align="left">Feature</th>
+      <th scope="col" align="left">Why</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr valign="top">
+      <th scope="row" align="left"><a href="https://github.com/Accessible360/accessible-slick/issues/8">Previous and Next button markup</a> improved to no longer use <code>aria-label</code>, and to safely hide the icons from screen readers.</th>
+      <td>See the <a href="https://www.w3.org/TR/using-aria/#rule1">First Rule of ARIA Use</a>. Also, custom font icons are read out as "unrecognizable characters" by screen readers, so they need to be hidden from them.</td>
+    </tr>
+    <tr valign="top">
+      <th scope="row" align="left">Tab markup is no longer used for <a href="https://github.com/Accessible360/accessible-slick/issues/10">slide dots</a> or <a href="https://github.com/Accessible360/accessible-slick/issues/9">slides</a>.</th>
+      <td>Carousels <a href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">don't look like tabs</a>, so real users wouldn't expect them to work like tabs, especially when there are multiple slides visible at a time.</td>
+    </tr>
+    <tr valign="top">
+      <th scope="row" align="left">Keyboard navigation with the <code>Left</code> and <code>Right</code> arrow keys <a href="https://github.com/Accessible360/accessible-slick/issues/15">has been removed</a>.</th>
+      <td>The <code>Left</code> and <code>Right</code> keys are already used by screen readers for virtual cursor navigation, and other users have no reason to expect this functionality exists without visible instructions or clues.</td>
+    </tr>
+  </tbody>
+</table>
 
 
 ## Usage
@@ -78,7 +112,7 @@ All of the original events and methods, and most of the original settings, are s
 In addition the original functionality, the following new settings have been added:
 
 Setting | Type | Default | Description
---------|------|---------|------------
+:-------|:-----|:--------|:-----------
 regionLabel | string | 'carousel' | Text to use for the `aria-label` that is placed on the wrapper.
 useGroupRole | boolean | true | Controls whether `role="group"` and an `aria-label` are applied to each slide.
 useAutoplayToggleButton | boolean | true | Controls whether a pause/play icon button is added when autoplay is enabled. Setting this to `false` without providing an alternative control would likely violate [WCAG 2.2.2](https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html), so be careful!
@@ -87,7 +121,7 @@ useAutoplayToggleButton | boolean | true | Controls whether a pause/play icon bu
 The following settings have been removed from the API, but if you pass them in through your initialization function or data attributes nothing bad will happen! If any of these settings are passed in, you'll just get a soft console warning letting you know that the setting is no longer relevant.
 
 Setting | Reason(s)
---------|----------
+:-------|:---------
 accessibility | Equal access should not be a feature that can be turned off. This setting actually made the slides _less_ accessible by introducing unintuitive tab markup, keyboard navigation that conflicts with screen readers, and more. [See issue #12](https://github.com/Accessible360/accessible-slick/issues/12).
 focusOnChange | Per [WCAG 3.2.2](https://www.w3.org/WAI/WCAG21/Understanding/on-input.html) and user research, keyboard focus should never be moved unless the user is told ahead of time. Even when explained, moving focus like this would suck for keyboard users, so this setting had to go. [See issue #11](https://github.com/Accessible360/accessible-slick/issues/11).
 focusOnSelect | Unnecessary since keyboard navigation has been removed. Even with keyboard navigation, tab stops on non-actionable elements is very strange for keyboard users, and really just adds work for them. [See issue #11](https://github.com/Accessible360/accessible-slick/issues/11).
