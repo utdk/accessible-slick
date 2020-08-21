@@ -46,7 +46,7 @@ In the short term, we're releasing our take on an accessible Slick Slider implem
 
 ## What makes this accessible?
 
-`TODO`
+This package implements the following changes, all of which have been tested and discussed with Accessible360's team of native screen reader users, low-vision keyboard-only users, and experienced accessibility engineers:
 
 ### New features ✨
 
@@ -61,22 +61,21 @@ Enabling autoplay now automatically adds a [pause/play toggle button](https://gi
 Feature | Why
 --------|----
 [Previous and Next button markup](https://github.com/Accessible360/accessible-slick/issues/8) improved to no longer use `aria-label`, and to safely hide the icons from screen readers. | See the [First Rule of ARIA Use](https://www.w3.org/TR/using-aria/#rule1). Also, custom font icons are read out as "unrecognizable characters" by screen readers, so they need to be hidden from them.
-Tab markup is no longer used for [slide dots](https://github.com/Accessible360/accessible-slick/issues/10) or [slides](https://github.com/Accessible360/accessible-slick/issues/9). | Carousels don't look like tabs, so real users wouldn't expect them to work like tabs. Especially when there are multiple slides visible at a time.
+Tab markup is no longer used for [slide dots](https://github.com/Accessible360/accessible-slick/issues/10) or [slides](https://github.com/Accessible360/accessible-slick/issues/9). | Carousels [don't look like tabs](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html), so real users wouldn't expect them to work like tabs, especially when there are multiple slides visible at a time.
 Keyboard navigation with the `Left` and `Right` arrow keys [has been removed](https://github.com/Accessible360/accessible-slick/issues/15). | The `Left` and `Right` keys are already used by screen readers for virtual cursor navigation, and other users have no reason to expect this functionality exists without visible instructions or clues.
 
 
 ## Usage
 
-All of the original events and methods, and most of the original settings, still work great so your existing configurations won't need to be tweaked at all! Refer to the original Slick Slider documentation to see how to use them:
+All of the original events and methods, and most of the original settings, are still available and work as expected, so your existing configurations won't need to be updated at all! Refer to the original Slick Slider documentation to see how to use them:
 
 * [Data attribute settings](https://github.com/kenwheeler/slick#data-attribute-settings)
 * [Settings](https://github.com/kenwheeler/slick#settings)
 * [Events](https://github.com/kenwheeler/slick#events)
 * [Methods](https://github.com/kenwheeler/slick#methods)
 
-A couple new settings have been added, and a few problematic ones have been deprecated. Sliders with these settings passed in will still work great (better, actually), and will now come with soft console warnings alerting you about them.
-
 ### New settings ✨
+In addition the original functionality, the following new settings have been added:
 
 Setting | Type | Default | Description
 --------|------|---------|------------
@@ -85,10 +84,12 @@ useGroupRole | boolean | true | Controls whether `role="group"` and an `aria-lab
 useAutoplayToggleButton | boolean | true | Controls whether a pause/play icon button is added when autoplay is enabled. Setting this to `false` without providing an alternative control would likely violate [WCAG 2.2.2](https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html), so be careful!
 
 ### Deprecated settings ❌
+The following settings have been removed from the API, but if you pass them in through your initialization function or data attributes nothing bad will happen! If any of these settings are passed in, you'll just get a soft console warning letting you know that the setting is no longer relevant.
 
 Setting | Reason(s)
 --------|----------
-focusOnChange | Per [WCAG 3.2.2](https://www.w3.org/WAI/WCAG21/Understanding/on-input.html) and user research, keyboard focus should never be moved unless the user is told ahead of time. Even if explaining, moving focus like this would suck for keyboard users, so this setting had to go. [See issue #11](https://github.com/Accessible360/accessible-slick/issues/11).
+accessibility | Equal access should not be a feature that can be turned off. This setting actually made the slides _less_ accessible by introducing unintuitive tab markup, keyboard navigation that conflicts with screen readers, and more. [See issue #12](https://github.com/Accessible360/accessible-slick/issues/12).
+focusOnChange | Per [WCAG 3.2.2](https://www.w3.org/WAI/WCAG21/Understanding/on-input.html) and user research, keyboard focus should never be moved unless the user is told ahead of time. Even when explained, moving focus like this would suck for keyboard users, so this setting had to go. [See issue #11](https://github.com/Accessible360/accessible-slick/issues/11).
 focusOnSelect | Unnecessary since keyboard navigation has been removed. Even with keyboard navigation, tab stops on non-actionable elements is very strange for keyboard users, and really just adds work for them. [See issue #11](https://github.com/Accessible360/accessible-slick/issues/11).
 
 
