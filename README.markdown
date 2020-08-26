@@ -169,4 +169,4 @@ Massive kudos to Ken Wheeler and the entire Slick Slider community for creating 
 
 This fork was started by Jason Webb (@jasonwebb), Developer Advocate at <a href="https://accessible360.com" target="_blank">Accessible360</a>.
 
-<a href="https://accessible360.com" target="_blank"><img src="https://github.com/accessible360/accessible-slick/docs/images/accessible360-logo.png" alt="Accessible360 logo with tagline Better. For All." width="400"></a>
+<a href="https://accessible360.com" target="_blank"><img src="https://raw.githubusercontent.com/Accessible360/accessible-slick/master/docs/images/accessible360-logo.png" alt="Accessible360 logo with tagline Better. For All." width="400"></a>
