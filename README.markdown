@@ -5,7 +5,7 @@ _the last (accessible) carousel you'll ever need_
 
 A fully accessible, WCAG 2.0 / 2.1 compliant, drop-in replacement for Slick Slider (1.8.1) intended to make life easier for real-world dev teams who need to pass accessibility audits.
 
-This package implements [accessibility and usability improvements](#what-makes-this-accessible) crafted and tested by native screen reader users and expert accessibility consultants at [Accessible360](https://accessible360.com) based on their experiences helping to make hundreds of carousels accessible for clients around the world. Read on to learn more about [why this package exists](#why-is-this-needed), its [features](#what-makes-this-accesible), [how to use it](#usage), and how you can get involved!
+This package implements [accessibility and usability improvements](#what-makes-this-accessible) crafted and tested by native screen reader users and expert accessibility consultants at [Accessible360](https://accessible360.com) based on their experiences helping to make hundreds of carousels accessible for clients around the world. Read on to learn more about [why this package exists](#why-is-this-needed), its [features](#what-makes-this-accesible), [how to use it](#usage), and [how you can get involved!](#contributing)
 
 #### Demo
 
@@ -161,3 +161,12 @@ If you feel this package can be improved in some way, please start by [proposing
 When your change is given the green light and you're ready to code, [create a fork of this repository](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) and commit your changes there. [Open a pull request (PR)](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) to the master branch of this repo and we'll get that sucker integrated!
 
 **If your change is really minor (like a spelling or formatting fix), feel free to just go ahead and open up a pull request and skip the prior validation!** We'll review and discuss your changes in the PR directly, if needed.
+
+
+## Credits
+
+Massive kudos to Ken Wheeler and the entire Slick Slider community for creating the original package.
+
+This fork was started by Jason Webb (@jasonwebb), Developer Advocate at <a href="https://accessible360.com" target="_blank">Accessible360</a>.
+
+<a href="https://accessible360.com" target="_blank"><img src="https://github.com/accessible360/accessible-slick/docs/images/accessible360-logo.png" alt="Accessible360 logo with tagline Better. For All." width="400"></a>
