@@ -6,6 +6,8 @@
 // "\2190" outputs ascii character "←"
 // "\2192" outputs ascii character "→"
 // "\2022" outputs ascii character "•"
+// "\23f8" outputs ascii character "⏸"
+// "\25b6" outputs ascii character "▶"
 
 $slick-font-path: "./fonts/" !default;
 $slick-font-family: "slick" !default;
@@ -16,6 +18,8 @@ $slick-dot-color-active: $slick-dot-color !default;
 $slick-prev-character: "\2190" !default;
 $slick-next-character: "\2192" !default;
 $slick-dot-character: "\2022" !default;
+$slick-pause-character: "\23f8" !default;
+$slick-play-character: "\25b6" !default;
 $slick-dot-size: 6px !default;
 $slick-opacity-default: 0.75 !default;
 $slick-opacity-on-hover: 1 !default;
@@ -181,11 +185,13 @@ $slick-opacity-not-active: 0.25 !default;
             cursor: pointer;
             &:hover, &:focus {
                 outline: none;
-                .slick-dot-icon:before {
+                .slick-dot-icon {
                     opacity: $slick-opacity-on-hover;
                 }
             }
             .slick-dot-icon {
+                color: $slick-dot-color;
+                opacity: $slick-opacity-not-active;
                 &:before {
                     position: absolute;
                     top: 0;
@@ -197,14 +203,10 @@ $slick-opacity-not-active: 0.25 !default;
                     font-size: $slick-dot-size;
                     line-height: 20px;
                     text-align: center;
-                    color: $slick-dot-color;
-                    opacity: $slick-opacity-not-active;
-                    -webkit-font-smoothing: antialiased;
-                    -moz-osx-font-smoothing: grayscale;
                 }
             }
         }
-        &.slick-active button .slick-dot-icon:before {
+        &.slick-active button .slick-dot-icon {
             color: $slick-dot-color-active;
             opacity: $slick-opacity-default;
         }
@@ -231,13 +233,36 @@ $slick-opacity-not-active: 0.25 !default;
 .slick-autoplay-toggle-button {
     position: absolute;
     left: 5px;
-    bottom: -20px;
+    bottom: -25px;
     z-index: 10;
 
     opacity: $slick-opacity-default;
+    background: none;
+    border: 0;
+    cursor: pointer;
 
     &:hover, &:focus {
         outline: none;
         opacity: $slick-opacity-on-hover;
+    }
+
+    .slick-pause-icon:before {
+        content: $slick-pause-character;
+        width: 20px;
+        height: 20px;
+        font-family: $slick-font-family;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+    }
+
+    .slick-play-icon:before {
+        content: $slick-play-character;
+        width: 20px;
+        height: 20px;
+        font-family: $slick-font-family;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
     }
 }
