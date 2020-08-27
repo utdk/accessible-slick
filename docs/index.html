@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="slick/accessible-slick-theme.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="a11y-dark.css">
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <meta name="description" content="accessible-slick is an accessible version of the popular Slick Slider responsive carousel jQuery plugin that supports multiple breakpoints, CSS3 transitions, touch events/swiping &amp; much more!">
   <meta name="keywords" content="accessible, accessibility, slick, responsive, carousel, slider, jQuery, plugin, CSS3, swipe, touch">
@@ -97,14 +98,15 @@
       Read more about <a href="https://github.com/Accessible360/accessible-slick#why-is-this-needed">why this package exists</a> and <a href="https://github.com/Accessible360/accessible-slick#what-makes-this-accessible">what makes it accessible</a> over on the project's <a href="https://github.com/Accessible360/accessible-slick">Github repo</a>!
     </p>
 
-    <section id="features" class="alt-background">
+    <section class="alt-background">
       <div class="content">
         <p>A fully accessible, WCAG 2.0 / 2.1 compliant, drop-in replacement for Slick Slider (1.8.1) crafted and tested by expert users and profesional accessibility consultants, intended to make life easier for real-world dev teams who need to pass accessibility audits.</p>
-        <h2 id="features">Features</h2>
+
+        <h2 id="features" tabindex="-1">Features</h2>
 
         <p style="font-weight: bold; font-size: 18px;">All of the same great features as the original Slick package, along with:</p>
 
-        <ul class="features">
+        <ul class="features-list">
           <li>The wrapper now has a <code>role="region"</code> and a clear, configurable <code>aria-label</code>.</li>
           <li>Each slide has <code>role="group"</code> with a numbered <code>aria-label</code>.</li>
           <li>Autoplay now automatically comes with a pause/play toggle button.</li>
@@ -120,7 +122,7 @@
 
         <h2 id="demos" class="sr-only" tabindex="-1">Demos</h2>
 
-        <h3>Single Item</h3>
+        <h3 id="single-item" tabindex="-1">Single Item</h3>
 
         <div class="slider single-item">
           <div><p>1</p></div>
@@ -135,7 +137,7 @@
 
           <hr aria-hidden="true">
 
-        <h3>Multiple Items</h3>
+        <h3 id="multiple-items" tabindex="-1">Multiple Items</h3>
 
         <div class="slider multiple-items">
           <div><p>1</p></div>
@@ -157,7 +159,7 @@
 
           <hr aria-hidden="true">
 
-        <h3>Responsive Display</h3>
+        <h3 id="responsive-display" tabindex="-1">Responsive Display</h3>
 
         <div class="slider responsive">
           <div><p>1</p></div>
@@ -206,9 +208,20 @@
   ]
 });</code></pre>
 
+        <div class="accessibility-tip">
+          <div class="icon">
+            <span class="fa fa-universal-access" aria-hidden="true"></span>
+          </div>
+
+          <div class="content">
+            <h3 class="heading">Accessibility tip!</h3>
+            <p>Never disable <strong>both</strong> the previous/next buttons and the slide dots! Some people use screen readers (like VoiceOver and TalkBack), while others can't do gestures. Be sure to give them at least one set of controls they can use.</p>
+          </div>
+        </div>
+
           <hr aria-hidden="true">
 
-        <h3>Variable Width</h3>
+        <h3 id="variable-width" tabindex="-1">Variable Width</h3>
 
         <div class="slider variable-width">
           <div style="width: 200px;">
@@ -242,7 +255,7 @@
 
           <hr aria-hidden="true">
 
-        <h3>Adaptive Height</h3>
+        <h3 id="adaptive-height" tabindex="-1">Adaptive Height</h3>
 
         <div class="slider adaptive-height">
           <div><p>1</p></div>
@@ -271,7 +284,7 @@
 
           <hr aria-hidden="true">
 
-        <h3>Data Attribute Settings</h3>
+        <h3 id="data-attribute-settings" tabindex="-1">Data Attribute Settings</h3>
 
         <p>In slick 1.5+ you can now add settings using the <code>data-slick</code> attribute. You still need to call <code>$(element).slick()</code> to initialize slick on the element.</p>
 
@@ -295,7 +308,7 @@
 
           <hr aria-hidden="true">
 
-        <h3>Center Mode</h3>
+        <h3 id="center-mode" tabindex="-1">Center Mode</h3>
 
         <div class="slider center">
           <div><p>1</p></div>
@@ -315,6 +328,7 @@
       breakpoint: 768,
       settings: {
         arrows: false,
+        dots: true,
         centerMode: true,
         centerPadding: '40px',
         slidesToShow: 3
@@ -324,6 +338,7 @@
       breakpoint: 480,
       settings: {
         arrows: false,
+        dots: true,
         centerMode: true,
         centerPadding: '40px',
         slidesToShow: 1
@@ -334,7 +349,7 @@
 
           <hr aria-hidden="true">
 
-        <h3>Lazy Loading</h3>
+        <h3 id="lazy-loading" tabindex="-1">Lazy Loading</h3>
 
         <div class="slider image-slider lazy">
           <div>
@@ -381,20 +396,20 @@ $('.lazy').slick({
   slidesToScroll: 1
 });</code></pre>
 
-          <div class="accessibility-tip">
-            <div class="icon">
-              <span class="" aria-hidden="true"></span>
-            </div>
-
-            <div class="content">
-              <h4>Accessibility tip!</h4>
-              <p>Remember that alt text</p>
-            </div>
+        <div class="accessibility-tip">
+          <div class="icon">
+            <span class="fa fa-universal-access" aria-hidden="true"></span>
           </div>
+
+          <div class="content">
+            <h3 class="heading">Accessibility tip!</h3>
+            <p>If your slides contain nothing but images, those images almost certainly need <code>alt</code> descriptions in order to fulfill <a href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html" target="_blank">WCAG 1.1.1</a>.</p>
+          </div>
+        </div>
 
           <hr aria-hidden="true">
 
-        <h3>Autoplay</h3>
+        <h3 id="autoplay" tabindex="-1">Autoplay</h3>
 
         <div class="slider autoplay">
           <div><p>1</p></div>
@@ -414,9 +429,21 @@ $('.lazy').slick({
 
         <p>In accessible-slick, a pause/play icon button is <em>automatically added</em> when <code>autoplay</code> is enabled in order to comply with <a href="https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html" target="_blank">WCAG 2.2.2</a>.</p>
 
+        <div class="accessibility-tip">
+          <div class="icon">
+            <span class="fa fa-universal-access" aria-hidden="true"></span>
+          </div>
+
+          <div class="content">
+            <h3 class="heading">Accessibility tip!</h3>
+            <p><b>DO NOT</b> disable the autoplay pause/play button unless you are replacing it with a reasonable alternative mechanism for pausing, stopping, or hiding the carousel (<a href="https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html" target="_blank">WCAG 2.2.2</a>).</p>
+            <p>If you know what you are doing, set <code>useAutoplayToggleButton</code> to <code>false</code> to get rid of the button.</p>
+          </div>
+        </div>
+
           <hr aria-hidden="true">
 
-        <h3>Fade</h3>
+        <h3 id="fade" tabindex="-1">Fade</h3>
 
         <div class="slider image-slider fade">
           <div>
@@ -444,9 +471,20 @@ $('.lazy').slick({
   cssEase: 'linear'
 });</code></pre>
 
+        <div class="accessibility-tip">
+          <div class="icon">
+            <span class="fa fa-universal-access" aria-hidden="true"></span>
+          </div>
+
+          <div class="content">
+            <h3 class="heading">Accessibility tip!</h3>
+            <p>If your slides contain nothing but images, those images almost certainly need <code>alt</code> descriptions in order to fulfill <a href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html" target="_blank">WCAG 1.1.1</a>.</p>
+          </div>
+        </div>
+
           <hr aria-hidden="true">
 
-        <h3>Add &amp; Remove</h3>
+        <h3 id="add-remove" tabindex="-1">Add &amp; Remove</h3>
 
         <div class="slider add-remove">
           <div><p>1</p></div>
@@ -476,7 +514,7 @@ $('.js-remove-slide').on('click', function() {
 
           <hr aria-hidden="true">
 
-        <h3>Filtering</h3>
+        <h3 id="filtering" tabindex="-1">Filtering</h3>
 
         <div class="slider filtering">
           <div><p>1</p></div>
@@ -518,7 +556,7 @@ $('.js-filter').on('click', function(){
 
           <hr aria-hidden="true">
 
-        <h3>Destroy</h3>
+        <h3 id="destroy" tabindex="-1">Destroy</h3>
 
         <p>If you really want to be that guy...</p>
 
@@ -526,7 +564,7 @@ $('.js-filter').on('click', function(){
 
           <hr aria-hidden="true">
 
-        <h3>Slider Syncing</h3>
+        <h3 id="slider-syncing" tabindex="-1">Slider Syncing</h3>
 
         <div class="slider slider-for">
           <div><p>1</p></div>
@@ -563,7 +601,7 @@ $('.slider-nav').slick({
 
           <hr aria-hidden="true">
 
-        <h3>Right to Left</h3>
+        <h3 id="rtl" tabindex="-1">Right to Left</h3>
 
         <div dir="rtl" class="slider single-item-rtl">
           <div><p>1</p></div>
@@ -578,7 +616,7 @@ $('.slider-nav').slick({
   rtl: true
 });</code></pre>
 
-        <p><strong>Note:</strong> the HTML tag or the parent of the slider must have the attribute "dir" set to "rtl".</p>
+        <p><strong>Note:</strong> the HTML tag of the slider, or the parent element of the slider, must have the attribute <code>dir="rtl"</code>.</p>
 
           <hr aria-hidden="true">
 
@@ -586,9 +624,9 @@ $('.slider-nav').slick({
       </div>
     </section>
 
-    <section id="getting-started" class="white" tabindex="-1">
+    <section class="white">
       <div class="content">
-        <h2>Getting Started</h2>
+        <h2 id="getting-started" tabindex="-1">Getting Started</h2>
 
         <p>Set up your HTML markup.</p>
 
@@ -600,20 +638,20 @@ $('.slider-nav').slick({
 
           <hr aria-hidden="true">
 
-        <p>Move the /slick folder into your project</p>
+        <p>Move the <code>/slick</code> folder into your project</p>
 
           <hr aria-hidden="true">
 
-        <p>Add slick.css in your &lt;head&gt;</p>
+        <p>Add <code>slick.min.css</code> in your <code>&lt;head&gt;</code></p>
 
         <pre><code class="language-markup">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;slick/slick.min.css&quot;/&gt;
 
-// Add the new slick-theme.min.css if you want the default styling
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;slick/slick-theme.css&quot;/&gt;</code></pre>
+// Add the new accessible-slick-theme.min.css if you want great, accessible styles!
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;slick/accessible-slick-theme.css&quot;/&gt;</code></pre>
 
           <hr aria-hidden="true">
 
-        <p>Add slick.js before your closing &lt;body&gt; tag, after jQuery (requires jQuery 1.7 +)</p>
+        <p>Add <code>slick.min.js</code> before your closing <code>&lt;body&gt;</code> tag, after jQuery (requires jQuery 1.7+)</p>
 
         <pre><code class="language-markup">&lt;script type=&quot;text/javascript&quot; src=&quot;https://code.jquery.com/jquery-3.5.1.min.js&quot;&gt;&lt;/script&gt;
 &lt;script type=&quot;text/javascript&quot; src=&quot;slick/slick.min.js&quot;&gt;&lt;/script&gt;</code></pre>
@@ -658,16 +696,14 @@ $('.slider-nav').slick({
     &lt;/script&gt;
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-
-        <p>NOTE: I highly recommend putting your initialization script in an external JS file.</p>
       </div>
     </section>
 
-    <section id="settings" class="alt-background" tabindex="-1">
+    <section class="alt-background">
       <div class="content">
-        <h2>Settings</h2>
+        <h2 id="settings" tabindex="-1">Settings</h2>
 
-        <p>Same settings apply
+        <p>With just a <a href="https://github.com/Accessible360/accessible-slick#deprecated-settings-">few important exceptions</a>, all of the <a href="https://github.com/kenwheeler/slick#settings" target="_blank">original settings</a> are still available. Additionally, the following <a href="https://github.com/Accessible360/accessible-slick#new-settings-">new settings</a> are also now available:</p>
 
         <table>
           <thead class="sr-only">
@@ -702,29 +738,29 @@ $('.slider-nav').slick({
 
         <div class="accessibility-tip">
           <div class="icon">
-            <span class="" aria-hidden="true"></span>
+            <span class="fa fa-universal-access" aria-hidden="true"></span>
           </div>
 
           <div class="content">
-            <h4>Accessibility tip!</h4>
-            <p>The <code>accessibility</code>, <code>focusOnChange</code>, and <code>focusOnSelect</code> settings no longer do anything, but won't break your configs if they are passed in. <a href="https://github.com/Accessible360/accessible-slick#deprecated-settings-">Read more about these changes here</a>.</p>
+            <h3 class="heading">Accessibility tip!</h3>
+            <p>The <code>accessibility</code>, <code>focusOnChange</code>, and <code>focusOnSelect</code> settings no longer do anything, but nothing will break if they are passed in by a legacy config. <a href="https://github.com/Accessible360/accessible-slick#deprecated-settings-">Read more about these changes here</a>.</p>
           </div>
         </div>
 
-        <h2>Events</h2>
+        <h2 id="events" tabindex="-1">Events</h2>
 
         <p>All of the <a href="https://github.com/kenwheeler/slick#events" target="_blank">original events</a> are available.</p>
 
-        <h2>Methods</h2>
+        <h2 id="methods" tabindex="-1">Methods</h2>
 
         <p>All of the <a href="https://github.com/kenwheeler/slick#methods" target="_blank">original methods</a> are available.</p>
 
       </div>
     </section>
 
-    <section id="go-get-it" class="white" tabindex="-1">
+    <section class="white">
       <div class="content">
-        <h2>Go Get It</h2>
+        <h2 id="go-get-it" tabindex="-1">Go Get It</h2>
 
         <a class="button first" href="">Download Now</a>
         <a class="button last" href="https://github.com/Accessible360/accessible-slick">View On Github</a>
@@ -829,6 +865,7 @@ JS
         breakpoint: 768,
         settings: {
           arrows: false,
+          dots: true,
           centerMode: true,
           centerPadding: '40px',
           slidesToShow: 3
@@ -837,6 +874,7 @@ JS
         breakpoint: 480,
         settings: {
           arrows: false,
+          dots: true,
           centerMode: true,
           centerPadding: '40px',
           slidesToShow: 1

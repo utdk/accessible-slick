@@ -81,6 +81,11 @@ p {
     text-decoration: underline;
   }
 
+  .button:focus {
+    outline: 4px dashed var(--alternative-color--light);
+    outline-offset: 1px;
+  }
+
 .buttons {
   padding: 0 20px 20px;
   margin-bottom: 10px;
@@ -190,6 +195,11 @@ ul.nav {
   }
 }
 
+
+/*********************************************
+  Github corner badge
+  https://github.com/tholman/github-corners
+**********************************************/
 .github-corner svg {
   transition: all .2s linear;
 }
@@ -204,7 +214,12 @@ ul.nav {
     outline-offset: 1px;
   }
 
-.readme-link {
+
+/*********************************
+  Light banner at top pointing
+  to repo README
+**********************************/
+.readme-banner {
   background-color: var(--alternative-color--light);
   color: var(--alternative-color--dark);
   margin-top: 10px;
@@ -326,48 +341,73 @@ td code {
   position: relative;
   padding: 2px 7px 4px 7px;
   border-radius: 3px;
-  color: white;
-  background-color: rgba(0,0,0,0.5);
+  color: var(--alternative-color--dark);
+  background-color: var(--alternative-color--light);
 }
+
+  .alt-background p code,
+  .alt-background li code,
+  .alt-background th code,
+  .alt-background td code {
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+  }
 
 
 /****************************
   Accessibility tip block
 *****************************/
 .accessibility-tip {
-  background-color: darkred;
+  background-color: #204CCF;
   display: flex;
   margin: 20px 10px 0 10px;
-  /* box-shadow: 2px 2px 0 2px rgba(0,0,0,.3); */
-  border: 1px solid black;
+  outline: 2px solid black;
 }
 
   .accessibility-tip .icon {
-    flex: 0 0 10%;
+    flex: 0 0 16%;
+    padding-top: 10px;
+
+    text-align: center;
+    font-size: 48px;
+
+    color: white;
   }
 
   .accessibility-tip .content {
     text-align: left;
+    padding: 15px;
+    padding-left: 0;
+    padding-right: 25px;
   }
 
-    .accessibility-tip h4 {
+    .accessibility-tip .heading {
       font-family: Arial, Helvetica, sans-serif;
       font-size: 18px;
       text-align: left;
       margin: 0;
+      margin-bottom: 10px;
     }
 
     .accessibility-tip p {
       text-align: left;
       margin: 0;
-      opacity: .8;
+      opacity: .9;
     }
+
+      .accessibility-tip p + p {
+        margin-top: 15px;
+      }
+
+      .accessibility-tip a:focus {
+        outline-color: orange;
+      }
 
 
 /*******************
   Features at top
 ********************/
-.features {
+.features-list {
   display: block;
   list-style-type: none;
   margin-top: 30px;
@@ -375,7 +415,7 @@ td code {
   text-align: center;
 }
 
-  .features li {
+  .features-list li {
     margin: 30px 0;
   }
 
@@ -410,7 +450,7 @@ td code {
 
 /** Center Mode */
 .center .slick-center {
-  color: #e67e22;
+  color: royalblue;
   opacity: 1;
   transform: scale(1.2);
   transition: all .5s linear;
@@ -446,7 +486,7 @@ td code {
 table {
   font-size: 14px;
   line-height: 18px;
-  margin: 40px auto 20px;
+  margin: 40px auto 0;
   display: block;
 }
 
@@ -459,6 +499,11 @@ table {
     background: transparent;
     float: left;
   }
+
+    tr:last-of-type {
+      border: 0;
+      padding-bottom: 0;
+    }
 
     th {
       font-weight: bold;
