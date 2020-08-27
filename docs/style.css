@@ -228,7 +228,7 @@ ul.nav {
   text-align: center;
 }
 
-  .readme-link a {
+  .readme-banner a {
     color: var(--alternative-color--dark);
     font-weight: bold;
   }
@@ -674,7 +674,7 @@ table {
   z-index: 100;
   transition: top .2s ease-out;
 
-  background-color: darkblue;
+  background-color: var(--alternative-color--dark);
   font-size: 18px;
   font-weight: bold;
   color: white;
