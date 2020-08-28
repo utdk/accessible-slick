@@ -231,6 +231,34 @@ ul.nav {
   .readme-banner a {
     color: var(--alternative-color--dark);
     font-weight: bold;
+    transition: outline .08s linear;
+  }
+
+
+/********************
+  Sponsor section
+********************/
+.sponsor-banner {
+  background-color: var(--alternative-color--light);
+  color: var(--alternative-color--dark);
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+  .sponsor-banner a {
+    display: block;
+  }
+
+    .sponsor-banner a:focus {
+      outline: 4px dashed black !important;
+    }
+
+  .sponsor-banner img {
+    width: auto;
+    height: 70px;
   }
 
 
@@ -245,6 +273,7 @@ section {
 
   section a {
     font-weight: bold;
+    transition: outline .1s linear;
   }
 
 .alt-background {
@@ -261,6 +290,10 @@ section {
   .alt-background a {
     color: white;
   }
+
+    .alt-background a:focus {
+      outline-color: orange;
+    }
 
   .alt-background .slick-slide {
     background: #fff;
