@@ -88,8 +88,8 @@ This package implements the following changes, all of which have been tested and
   </thead>
   <tbody>
     <tr valign="top">
-      <th scope="row" align="left"><a href="https://github.com/Accessible360/accessible-slick/issues/8">Previous and Next button markup</a> improved to no longer use <code>aria-label</code>, and to safely hide the icons from screen readers.</th>
-      <td>See the <a href="https://www.w3.org/TR/using-aria/#rule1">First Rule of ARIA Use</a>. Also, custom font icons are read out as "unrecognizable characters" by screen readers, so they need to be hidden from them.</td>
+      <th scope="row" align="left"><a href="https://github.com/Accessible360/accessible-slick/issues/8">Previous and Next button markup</a> improved to use less ARIA and to safely hide the icons from screen readers.</th>
+      <td>Per the <a href="https://www.w3.org/TR/using-aria/#rule1">First Rule of ARIA Use</a>, <code>aria-label</code> has been removed in favor of inner screen-reader-only text. Also, the HTML5 <code>disabled</code> is now used instead of <code>aria-disabled</code> for more consistency across all input modalities. Finally, the custom icons are attached to inner <code>span</code>s that are properly hidden from screen readers with <code>aria-hidden</code>.</td>
     </tr>
     <tr valign="top">
       <th scope="row" align="left">Tab markup is no longer used for <a href="https://github.com/Accessible360/accessible-slick/issues/10">slide dots</a> or <a href="https://github.com/Accessible360/accessible-slick/issues/9">slides</a>.</th>
