@@ -100,7 +100,7 @@
 
     <section class="alt-background">
       <div class="content">
-        <p>A fully accessible, WCAG 2.0 / 2.1 compliant, drop-in replacement for Slick Slider (1.8.1) crafted and tested by expert users and profesional accessibility consultants, intended to make life easier for real-world dev teams who need to pass accessibility audits.</p>
+        <p>A fully accessible, WCAG 2.0 / 2.1 compliant, drop-in replacement for Slick Slider (1.8.1) crafted and tested by expert users and professional accessibility consultants, intended to make life easier for real-world dev teams who need to pass accessibility audits.</p>
 
         <div class="sponsor-banner">
           Sponsored by:
@@ -602,7 +602,8 @@ $('.js-filter').on('click', function(){
   slidesToScroll: 1,
   arrows: false,
   fade: true,
-  asNavFor: '.slider-nav'
+  asNavFor: '.slider-nav',
+  instructionsText: 'Changing this current slide of this carousel will change the current slide of the carousel that follows.'
 });
 
 $('.slider-nav').slick({
@@ -611,8 +612,20 @@ $('.slider-nav').slick({
   asNavFor: '.slider-for',
   dots: true,
   centerMode: true,
-  focusOnSelect: true
+  focusOnSelect: true,
+  instructionsText: 'Changing the current slide of this carousel will change the current slide of the preceding carousel.'
 });</code></pre>
+
+        <div class="accessibility-tip">
+          <div class="icon">
+            <span class="fa fa-universal-access" aria-hidden="true"></span>
+          </div>
+
+          <div class="content">
+            <h3 class="heading">TIP: always explain how sliders are synced!</h3>
+            <p>Use the new <code>instructionsText</code> setting </code> to provide clear, simple instructions for screen reader users to explain what happens when they interact with these sliders. These instructions will be added as screen-reader-only text at the beginning of the slider.</p>
+          </div>
+        </div>
 
           <hr aria-hidden="true">
 
@@ -983,7 +996,8 @@ JS
       speed: 500,
       arrows: false,
       fade: true,
-      asNavFor: '.slider-nav'
+      asNavFor: '.slider-nav',
+      instructionsText: 'Changing this current slide of this carousel will change the current slide of the carousel that follows.'
     });
 
     // b. Control slider
@@ -995,7 +1009,8 @@ JS
       dots: true,
       centerMode: true,
       focusOnSelect: true,
-      slide: 'div'
+      slide: 'div',
+      instructionsText: 'Changing the current slide of this carousel will change the current slide of the preceding carousel.'
     });
 
     // Right to Left

@@ -70,6 +70,7 @@
                 fade: false,
                 infinite: true,
                 initialSlide: 0,
+                instructionsText: null,
                 lazyLoad: 'ondemand',
                 mobileFirst: false,
                 pauseOnHover: true,
@@ -109,6 +110,7 @@
                 currentSlide: 0,
                 direction: 1,
                 $dots: null,
+                $instructionsText: null,
                 listWidth: null,
                 listHeight: null,
                 loadIndex: 0,
@@ -589,6 +591,11 @@
                               + '</button>');
 
             _.$pauseButton.prependTo(_.$slider);
+        }
+
+        if((_.options.instructionsText != null && _.options.instructionsText != '')) {
+            _.$instructionsText = $('<p class="slick-instructions slick-sr-only">' + _.options.instructionsText + '</p>');
+            _.$instructionsText.prependTo(_.$slider);
         }
 
     };
