@@ -11,6 +11,8 @@ This package implements [accessibility and usability improvements](#what-makes-t
 
 https://accessible360.github.io/accessible-slick
 
+Also check out this [collection of ready-to-use demos on CodePen](https://codepen.io/collection/nwRGZk) for common scenarios like hero banners, scrolling product cards, PDP thumbnail images, and more!
+
 #### CDN
 
 ##### Example using jsDelivr
