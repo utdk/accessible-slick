@@ -74,6 +74,8 @@
                 instructionsText: null,
                 lazyLoad: 'ondemand',
                 mobileFirst: false,
+                playIcon: '<span class="slick-play-icon" aria-hidden="true"></span>',
+                pauseIcon: '<span class="slick-pause-icon" aria-hidden="true"></span>',
                 pauseOnHover: true,
                 pauseOnFocus: true,
                 pauseOnDotsHover: false,
@@ -117,6 +119,8 @@
                 loadIndex: 0,
                 $nextArrow: null,
                 $pauseButton: null,
+                $pauseIcon: null,
+                $playIcon: null,
                 $prevArrow: null,
                 scrolling: false,
                 slideCount: null,
@@ -441,16 +445,16 @@
         var _ = this;
 
         if(_.paused) {
-            _.$pauseButton.find('.slick-play-icon').attr('style', 'display: none');
-            _.$pauseButton.find('.slick-pause-icon').removeAttr('style');
+            _.$playIcon.css('display', 'none');
+            _.$pauseIcon.css('display', 'inline');
 
             _.$pauseButton.find('.slick-play-text').attr('style', 'display: none');
             _.$pauseButton.find('.slick-pause-text').removeAttr('style');
 
             _.slickPlay();
         } else {
-            _.$pauseButton.find('.slick-play-icon').removeAttr('style');
-            _.$pauseButton.find('.slick-pause-icon').attr('style', 'display: none');
+            _.$playIcon.css('display', 'inline');
+            _.$pauseIcon.css('display', 'none');
 
             _.$pauseButton.find('.slick-play-text').removeAttr('style');
             _.$pauseButton.find('.slick-pause-text').attr('style', 'display: none');
@@ -577,12 +581,14 @@
         }
 
         if ( _.options.autoplay && _.options.useAutoplayToggleButton ) {
-            _.$pauseButton = $('<button type="button" class="slick-autoplay-toggle-button">'
-                                + '<span class="slick-pause-icon" aria-hidden="true"></span>'
-                                + '<span class="slick-play-icon" aria-hidden="true" style="display: none"></span>'
-                                + '<span class="slick-pause-text slick-sr-only">Pause</span>'
-                                + '<span class="slick-play-text slick-sr-only" style="display: none">Play</span>'
-                              + '</button>');
+            _.$pauseIcon = $(_.options.pauseIcon).attr('aria-hidden', true);
+            _.$playIcon = $(_.options.playIcon).attr('aria-hidden', true);
+
+            _.$pauseButton = $('<button type="button" class="slick-autoplay-toggle-button">');
+            _.$pauseButton.append(_.$pauseIcon);
+            _.$pauseButton.append(_.$playIcon.css('display', 'none'));
+            _.$pauseButton.append($('<span class="slick-pause-text slick-sr-only">Pause</span>'));
+            _.$pauseButton.append($('<span class="slick-play-text slick-sr-only" style="display: none">Play</span>'));
 
             _.$pauseButton.prependTo(_.$slider);
         }

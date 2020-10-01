@@ -69,7 +69,7 @@ This package implements the following changes, all of which have been tested and
       <td>Tells screen reader users exactly where each individual slide begins and ends in the DOM. It should fit the vast majority of use cases, but if you <em>really</em> want to disable it you can do so with the new <a href="#new-settings-"><code>useGroupRole</code> setting</a>.</td>
     </tr>
     <tr valign="top">
-      <th scope="row" align="left">Enabling autoplay now automatically adds a <a href="https://github.com/Accessible360/accessible-slick/issues/13">pause/play toggle button</a> as the first focusable element.</th>
+      <th scope="row" align="left">Enabling autoplay now automatically adds a <a href="https://github.com/Accessible360/accessible-slick/issues/13">pause/play toggle button</a> as the first focusable element (with <a href="https://github.com/Accessible360/accessible-slick/issues/20">customizable icons</a>!).</th>
       <td><a href="https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html">WCAG 2.2.2</a> requires that all auto-updating content comes with a way to pause, stop, or hide it. For carousels, pause/play icon buttons are the most familiar option. Since autoplay is so disruptive for keyboard and screen reader users, as well as people with certain cognitive conditions, the button is the very first piece of content in the slider so it can be reached right away.</td>
     </tr>
     <tr valign="top">
@@ -123,6 +123,8 @@ regionLabel | string | 'carousel' | Text to use for the `aria-label` that is pla
 useGroupRole | boolean | true | Controls whether `role="group"` and an `aria-label` are applied to each slide.
 useAutoplayToggleButton | boolean | true | Controls whether a pause/play icon button is added when autoplay is enabled. Setting this to `false` without providing an alternative control would likely violate [WCAG 2.2.2](https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html), so be careful!
 instructionsText | string | `null` | Instructions for screen reader users placed at the very beginning of the slider markup. **If you are using `asNavFor` or adding custom functionality with API methods/events, you probably need to supply instructions!**
+pauseIcon | string (html \| jQuery selector) \| object (DOM node \| jQuery object) | `<span class="slick-pause-icon" aria-hidden="true"></span>` | Custom element to use as the "pause" icon inside the autoplay pause/play toggle button, when `autoplay` is enabled.
+playIcon | string (html \| jQuery selector) \| object (DOM node \| jQuery object) | `<span class="slick-play-icon" aria-hidden="true"></span>` | Custom element to use as the "play" icon inside the autoplay pause/play toggle button, when `autoplay` is enabled.
 
 ### Deprecated settings ❌
 The following settings have been removed from the API, but if you pass them in through your initialization function or data attributes nothing bad will happen! If any of these settings are passed in, you'll just get a soft console warning letting you know that the setting is no longer relevant.
