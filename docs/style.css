@@ -82,8 +82,8 @@ p {
   }
 
   .button:focus {
-    outline: 4px dashed var(--alternative-color--light);
-    outline-offset: 1px;
+    outline: 4px dashed black;
+    outline-offset: 2px;
   }
 
 .buttons {
@@ -257,8 +257,8 @@ ul.nav {
     }
 
   .sponsor-banner img {
-    width: auto;
-    height: 100px;
+    width: 80%;
+    max-height: 100px;
   }
 
 
