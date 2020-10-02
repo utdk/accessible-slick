@@ -73,8 +73,12 @@ This package implements the following changes, all of which have been tested and
       <td><a href="https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html">WCAG 2.2.2</a> requires that all auto-updating content comes with a way to pause, stop, or hide it. For carousels, pause/play icon buttons are the most familiar option. Since autoplay is so disruptive for keyboard and screen reader users, as well as people with certain cognitive conditions, the button is the very first piece of content in the slider so it can be reached right away.</td>
     </tr>
     <tr valign="top">
-      <th scope="row" align="left"><a href="https://github.com/Accessible360/accessible-slick/issues/18">Instructions can be now provided</a> for screen reader users</th>
-      <td>If your slider uses complex logic or unconventional interaction behaviors, there is a good chance that screen reader users will have an especially hard time figuring it out. If you're using the `asNavFor` setting or any of the API methods/events, you should probably explain how your carousel works to screen reader users.</td>
+      <th scope="row" align="left"><a href="https://github.com/Accessible360/accessible-slick/issues/18">Instructions can now be provided</a> for screen reader users</th>
+      <td>If your slider uses complex logic or unconventional interaction behaviors, there is a good chance that screen reader users will have an especially hard time figuring it out. If you're using the <code>asNavFor</code> setting or any of the API methods/events, you should probably explain how your carousel works to screen reader users.</td>
+    </tr>
+    <tr valign="top">
+      <th scope="row" align="left">The <a href="https://github.com/Accessible360/accessible-slick/issues/20">Previous and Next arrows can now be placed</a> before, after, or on either side of the slides in the DOM to match the visual design.</th>
+      <td>Designers can get really creative with sliders sometimes, making it difficult to ensure that all of the controls and slide contents are in a logical order in the page's DOM (<a href="https://www.w3.org/WAI/WCAG21/Understanding/meaningful-sequence.html">WCAG 1.3.2</a>) and tab sequence (<a href="https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html">WCAG 2.4.3</a>). Using the new <a href="#new-features-"><code>arrowsPlacement</code> setting</a>, you can now control where the previous and next buttons are injected to better match the visual design!</td>
     </tr>
   </tbody>
 </table>
@@ -91,7 +95,7 @@ This package implements the following changes, all of which have been tested and
   <tbody>
     <tr valign="top">
       <th scope="row" align="left"><a href="https://github.com/Accessible360/accessible-slick/issues/8">Previous and Next button markup</a> improved to use less ARIA and to safely hide the icons from screen readers.</th>
-      <td>Per the <a href="https://www.w3.org/TR/using-aria/#rule1">First Rule of ARIA Use</a>, <code>aria-label</code> has been removed in favor of inner screen-reader-only text. Also, the HTML5 <code>disabled</code> is now used instead of <code>aria-disabled</code> for more consistency across all input modalities. Finally, the custom icons are attached to inner <code>span</code>s that are properly hidden from screen readers with <code>aria-hidden</code>.</td>
+      <td>Per the <a href="https://www.w3.org/TR/using-aria/#rule1">First Rule of ARIA Use</a>, <code>aria-label</code> has been removed in favor of inner screen-reader-only text. Also, the HTML5 <code>disabled</code> attribute is now used instead of <code>aria-disabled</code> for more consistency across all input modalities. Finally, the custom icons are attached to inner <code>span</code>s that are properly hidden from screen readers with <code>aria-hidden</code>.</td>
     </tr>
     <tr valign="top">
       <th scope="row" align="left">Tab markup is no longer used for <a href="https://github.com/Accessible360/accessible-slick/issues/10">slide dots</a> or <a href="https://github.com/Accessible360/accessible-slick/issues/9">slides</a>.</th>
@@ -125,6 +129,7 @@ useAutoplayToggleButton | boolean | true | Controls whether a pause/play icon bu
 instructionsText | string | `null` | Instructions for screen reader users placed at the very beginning of the slider markup. **If you are using `asNavFor` or adding custom functionality with API methods/events, you probably need to supply instructions!**
 pauseIcon | string (html \| jQuery selector) \| object (DOM node \| jQuery object) | `<span class="slick-pause-icon" aria-hidden="true"></span>` | Custom element to use as the "pause" icon inside the autoplay pause/play toggle button, when `autoplay` is enabled.
 playIcon | string (html \| jQuery selector) \| object (DOM node \| jQuery object) | `<span class="slick-play-icon" aria-hidden="true"></span>` | Custom element to use as the "play" icon inside the autoplay pause/play toggle button, when `autoplay` is enabled.
+arrowsPlacement | string ('beforeSlides' \| 'afterSlides' \| 'split') | null | Determines where the previous and next arrows are placed in the slider DOM, which determines their tabbing order. Arrows can be placed together before the slides or after the slides, or split so that the previous arrow is before the slides and the next arrow is after (this is the default). Use this setting to ensure the tabbing order is logical based on your visual design to fulfill [WCAG 1.3.2](https://www.w3.org/WAI/WCAG21/Understanding/meaningful-sequence.html) and [2.4.3](https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html).
 
 ### Deprecated settings ❌
 The following settings have been removed from the API, but if you pass them in through your initialization function or data attributes nothing bad will happen! If any of these settings are passed in, you'll just get a soft console warning letting you know that the setting is no longer relevant.

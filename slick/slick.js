@@ -43,6 +43,7 @@
                 appendArrows: $(element),
                 appendDots: $(element),
                 arrows: true,
+                arrowsPlacement: null,
                 asNavFor: null,
                 prevArrow: '<button class="slick-prev" type="button">'
                             + '<span class="slick-prev-icon" aria-hidden="true"></span>'
@@ -475,11 +476,39 @@
             if( _.slideCount > _.options.slidesToShow ) {
 
                 if (_.htmlExpr.test(_.options.prevArrow)) {
-                    _.$prevArrow.prependTo(_.options.appendArrows);
+                    if(_.options.arrowsPlacement != null) {
+                        switch(_.options.arrowsPlacement) {
+                            case 'beforeSlides':
+                            case 'split':
+                                console.log('test');
+                                _.$prevArrow.prependTo(_.options.appendArrows);
+                                break;
+
+                            case 'afterSlides':
+                                _.$prevArrow.appendTo(_.options.appendArrows);
+                                break;
+                        }
+
+                    } else {
+                        _.$prevArrow.prependTo(_.options.appendArrows);
+                    }
                 }
 
                 if (_.htmlExpr.test(_.options.nextArrow)) {
-                    _.$nextArrow.appendTo(_.options.appendArrows);
+                    if(_.options.arrowsPlacement != null) {
+                        switch(_.options.arrowsPlacement) {
+                            case 'beforeSlides':
+                                console.log('test2');
+                                _.$prevArrow.after(_.$nextArrow);
+                                break;
+
+                            case 'afterSlides':
+                            case 'split':
+                                _.$nextArrow.appendTo(_.options.appendArrows);
+                        }
+                    } else {
+                       _.$nextArrow.appendTo(_.options.appendArrows);
+                    }
                 }
 
                 if (_.options.infinite !== true) {
