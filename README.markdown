@@ -80,6 +80,10 @@ This package implements the following changes, all of which have been tested and
       <th scope="row" align="left">The <a href="https://github.com/Accessible360/accessible-slick/issues/20">Previous and Next arrows can now be placed</a> before, after, or on either side of the slides in the DOM to match the visual design.</th>
       <td>Designers can get really creative with sliders sometimes, making it difficult to ensure that all of the controls and slide contents are in a logical order in the page's DOM (<a href="https://www.w3.org/WAI/WCAG21/Understanding/meaningful-sequence.html">WCAG 1.3.2</a>) and tab sequence (<a href="https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html">WCAG 2.4.3</a>). Using the new <a href="#new-features-"><code>arrowsPlacement</code> setting</a>, you can now control where the previous and next buttons are injected to better match the visual design!</td>
     </tr>
+    <tr valign="top">
+      <th scope="row" align="left">A more accessible CSS theme is now available with better focus styles and larger icons.</th>
+      <td>The original CSS theme (<code>slick-theme.min.css</code>) had very small icons and poor focus indicators. Now an alternative theme is available (<code>accessible-slick-theme.min.css</code>) with larger icons and browser-default focus indicators. To minimize risk of possible breaking styling changes, this theme is <b>opt-in</b>. Just update your <code>&lt;link&gt;</code> reference to use it!</td>
+    </tr>
   </tbody>
 </table>
 
