@@ -457,9 +457,10 @@ td code {
   Demos
 ***************/
 /** All sliders */
-.slick-slider .slick-autoplay-toggle-button,
-.slick-slider .slick-dots .slick-dot-icon,
-.slick-slider .slick-dots li.slick-active .slick-dot-icon {
+.slick-autoplay-toggle-button,
+.slick-prev .slick-prev-icon, .slick-next .slick-next-icon,
+.slick-dots li button .slick-dot-icon,
+.slick-dots li.slick-active button .slick-dot-icon {
   color: white;
 }
 
