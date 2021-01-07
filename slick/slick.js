@@ -2285,7 +2285,10 @@
         allSlides = _.$slider
             .find('.slick-slide')
             .removeClass('slick-active slick-center slick-current')
-            .attr('aria-hidden', 'true');
+            .attr('aria-hidden', 'true')
+            .attr('aria-label', function() {
+                return $(this).attr('aria-label').replace(' (centered)', '');
+            });
 
         _.$slides
             .eq(index)
@@ -2319,13 +2322,19 @@
 
                     allSlides
                         .eq( _.options.slidesToShow + _.slideCount + 1 )
-                        .addClass('slick-center');
+                        .addClass('slick-center')
+                        .attr('aria-label', function() {
+                            return $(this).attr('aria-label') + ' (centered)';
+                        });
 
                 } else if (index === _.slideCount - 1) {
 
                     allSlides
                         .eq(_.options.slidesToShow)
-                        .addClass('slick-center');
+                        .addClass('slick-center')
+                        .attr('aria-label', function() {
+                            return $(this).attr('aria-label') + ' (centered)';
+                        });
 
                 }
 
@@ -2333,7 +2342,10 @@
 
             _.$slides
                 .eq(index)
-                .addClass('slick-center');
+                .addClass('slick-center')
+                .attr('aria-label', function() {
+                    return $(this).attr('aria-label') + ' (centered)';
+                });
 
         } else {
 
