@@ -84,6 +84,10 @@ This package implements the following changes, all of which have been tested and
       <th scope="row" align="left">A more accessible CSS theme is now available with better focus styles and larger icons.</th>
       <td>The original CSS theme (<code>slick-theme.min.css</code>) had very small icons and poor focus indicators. Now an alternative theme is available (<code>accessible-slick-theme.min.css</code>) with larger icons and browser-default focus indicators. To minimize risk of possible breaking styling changes, this theme is <b>opt-in</b>. Just update your <code>&lt;link&gt;</code> reference to use it!</td>
     </tr>
+    <tr valign="top">
+      <th scope="row" align="left">When Center Mode is enabled, the <code>aria-label</code> of the <a href="https://github.com/Accessible360/accessible-slick/issues/21#issuecomment-756320112">centered slide will now be appended with the text "(centered)"</a>.</th>
+      <td>As shown in the <a href="https://accessible360.github.io/accessible-slick/#center-mode">original examples</a>, it is possible to apply custom styles to the centered slide to emphasize it. Since it's not possible to determine when this is done, the safest option is to just always tell screen reader users which slide is the centered one.</td>
+    </tr>
   </tbody>
 </table>
 
