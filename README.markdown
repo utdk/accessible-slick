@@ -5,7 +5,7 @@ _the last (accessible) carousel you'll ever need_
 
 A fully accessible, WCAG 2.0 / 2.1 compliant, drop-in replacement for Slick Slider (1.8.1) intended to make life easier for real-world dev teams who need to pass accessibility audits.
 
-This package implements [accessibility and usability improvements](#what-makes-this-accessible) crafted and tested by native screen reader users and expert accessibility consultants at [Accessible360](https://accessible360.com) based on their experiences helping to make hundreds of carousels accessible for clients around the world. Read on to learn more about [why this package exists](#why-is-this-needed), its [features](#what-makes-this-accesible), [how to use it](#usage), and [how you can get involved!](#contributing)
+This package implements [accessibility and usability improvements](#what-makes-this-accessible) crafted and tested by native screen reader users, low vision users, and expert accessibility consultants at [Accessible360](https://accessible360.com) based on their experiences helping to make hundreds of carousels accessible for clients around the world. Read on to learn more about [why this package exists](#why-is-this-needed), its [features](#what-makes-this-accessible), [how to use it](#usage), and [how you can get involved!](#contributing)
 
 #### Demo
 
@@ -37,7 +37,7 @@ TODO: pending publish to NPM
 
 ## Why is this needed?
 
-Almost by design, carousels are pretty hard for screen reader users (especially newbies) to understand and interact with successfully, let alone enjoy. Its hard to know where slides begin and end, how the slide navigation dots work, or where the various controls are. Carousels also vary quite a bit between sites or even just between pages, so it can be difficult for screen reader users to build up a reliable mental model that applies to ALL carousels. And let's not even get started on on autoplay functionality ([WCAG 2.2.2](https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html), anyone?)!
+Almost by design, carousels are pretty hard for screen reader users (especially newbies) to understand and interact with successfully, let alone enjoy. Its hard to know where slides begin and end, how the slide navigation dots work, or where the various controls are. Carousels also vary quite a bit between sites or even just between pages, so it can be difficult for screen reader users to build up a reliable mental model that applies to ALL carousels. And let's not even get started on autoplay functionality ([WCAG 2.2.2](https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html), anyone?)!
 
 As one of the most widely used carousel packages out there, Slick Slider has many of these same accessibility issues, making it a consistent source of frustration for dev teams when they go through an accessibility audit. Efforts have been made in the Slick Slider repo to improve these issues (especially in version 1.8.1), but those efforts have also introduced new accessibility issues too!
 
@@ -48,7 +48,7 @@ In the short term, we're releasing our take on an accessible Slick Slider implem
 
 ## What makes this accessible?
 
-This package implements the following changes, all of which have been tested and discussed with Accessible360's team of native screen reader users, low-vision keyboard-only users, and experienced accessibility engineers:
+This package implements the following changes, all of which have been thoroughly tested and discussed with Accessible360's team of native screen reader users, low vision users, and experienced accessibility engineers:
 
 ### New features ✨
 
