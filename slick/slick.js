@@ -243,6 +243,8 @@
 
         _.$slides.each(function(index, element) {
             $(element).attr('data-slick-index', index);
+            $(element).attr('role', 'group');
+            $(element).attr('aria-label', 'slide ' + index);
         });
 
         _.$slidesCache = _.$slides;
