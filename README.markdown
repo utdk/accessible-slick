@@ -113,6 +113,10 @@ This package implements the following changes, all of which have been thoroughly
       <th scope="row" align="left">Keyboard navigation with the <code>Left</code> and <code>Right</code> arrow keys <a href="https://github.com/Accessible360/accessible-slick/issues/15">has been removed</a>.</th>
       <td>The <code>Left</code> and <code>Right</code> keys are already used by screen readers for virtual cursor navigation, and other users have no reason to expect this functionality exists without visible instructions or clues.</td>
     </tr>
+    <tr valign="top">
+      <th scope="row" align="left">When slides are <a href="https://github.com/Accessible360/accessible-slick/issues/21#issuecomment-756320112">dynamically added after initialization</a>, they will now automatically get <code>role="group"</code> and a numbered <code>aria-label</code>.</th>
+      <td>The API expects you to supply the complete markup for each slide you add, including its wrapper. However, developers may not realize that they need to add these attributes for accessibility, so adding them automatically guarantees they're there. This also ensures backwards compatibility with any existing implementations.</td>
+    </tr>
   </tbody>
 </table>
 
