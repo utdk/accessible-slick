@@ -605,7 +605,8 @@ $('.js-filter').on('click', function(){
   arrows: false,
   fade: true,
   asNavFor: '.slider-nav',
-  instructionsText: 'Changing this current slide of this carousel will change the current slide of the carousel that follows.'
+  instructionsText: 'Changing this current slide of this carousel will change the current slide of the thumbnail carousel that follows.',
+  regionLabel: 'main image carousel'
 });
 
 $('.slider-nav').slick({
@@ -614,8 +615,8 @@ $('.slider-nav').slick({
   asNavFor: '.slider-for',
   dots: true,
   centerMode: true,
-  focusOnSelect: true,
-  instructionsText: 'Changing the current slide of this carousel will change the current slide of the preceding carousel.'
+  instructionsText: 'Changing the current slide of this carousel will change the current slide of the preceding main image carousel.',
+  regionLabel: 'thumbnail carousel'
 });</code></pre>
 
         <div class="accessibility-tip">
@@ -625,7 +626,18 @@ $('.slider-nav').slick({
 
           <div class="content">
             <h4 class="heading">TIP: always explain how sliders are synced!</h4>
-            <p>Use the new <code>instructionsText</code> setting </code> to provide clear, simple instructions for screen reader users to explain what happens when they interact with these sliders. These instructions will be added as screen-reader-only text at the beginning of the slider.</p>
+            <p>Use the new <code>instructionsText</code> setting to provide clear, simple instructions for screen reader users to explain what happens when they interact with these sliders. These instructions will be added as screen-reader-only text at the beginning of the slider.</p>
+          </div>
+        </div>
+
+        <div class="accessibility-tip">
+          <div class="icon">
+            <span class="fa fa-universal-access" aria-hidden="true"></span>
+          </div>
+
+          <div class="content">
+            <h4 class="heading">TIP: differentiate adjacent carousels</h4>
+            <p>Use the new <code>regionLabel</code> setting to change to <code>aria-label</code> on the wrapper regions so that they are easier for screen reader users to tell apart. Even better, use that same text in the instructions you provide so these users know what to listen for as they explore the page!</p>
           </div>
         </div>
 
@@ -999,7 +1011,8 @@ JS
       arrows: false,
       fade: true,
       asNavFor: '.slider-nav',
-      instructionsText: 'Changing this current slide of this carousel will change the current slide of the carousel that follows.'
+      instructionsText: 'Changing this current slide of this carousel will change the current slide of the thumbnail carousel that follows.',
+      regionLabel: 'main image carousel'
     });
 
     // b. Control slider
@@ -1010,9 +1023,9 @@ JS
       asNavFor: '.slider-for',
       dots: true,
       centerMode: true,
-      focusOnSelect: true,
       slide: 'div',
-      instructionsText: 'Changing the current slide of this carousel will change the current slide of the preceding carousel.'
+      instructionsText: 'Changing the current slide of this carousel will change the current slide of the preceding main image carousel.',
+      regionLabel: 'thumbnail carousel'
     });
 
     // Right to Left
