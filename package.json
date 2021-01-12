@@ -1,6 +1,6 @@
 {
-  "name": "accessible-slick",
-  "version": "1.8.1@accessible360.1",
+  "name": "@accessible360/accessible-slick",
+  "version": "1.0.0",
   "description": "the last (accessible) carousel you'll ever need",
   "main": "slick/slick.js",
   "repository": {
