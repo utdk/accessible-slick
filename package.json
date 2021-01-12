@@ -1,21 +1,30 @@
 {
-  "name": "slick-carousel",
-  "version": "1.8.1",
-  "description": "the last carousel you'll ever need",
+  "name": "accessible-slick",
+  "version": "1.8.1@accessible360.1",
+  "description": "the last (accessible) carousel you'll ever need",
   "main": "slick/slick.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kenwheeler/slick.git"
+    "url": "https://github.com/Accessible360/accessible-slick.git"
   },
   "keywords": [
+    "accessible",
+    "accessibility",
+    "wcag",
     "carousel",
     "slick",
     "responsive",
     "js",
-    "slider"
+    "slider",
+    "jquery-plugin"
   ],
-  "author": "Ken Wheeler <ken_wheeler@me.com>",
+  "author": "Accessible360 <jwebb@accessible360.com>",
   "contributors": [
+    {
+      "name": "jason webb",
+      "email": "jwebb@accessible360.com",
+      "url": "https://accessible360.com"
+    },
     {
       "name": "ken wheeler",
       "email": "ken_wheeler@me.com",
@@ -42,7 +51,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kenwheeler/slick/issues"
+    "url": "https://github.com/Accessible360/accessible-slick/issues"
   },
   "peerDependencies": {
     "jquery": ">=1.8.0"
