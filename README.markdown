@@ -135,13 +135,14 @@ In addition the original functionality, the following new settings have been add
 
 Setting | Type | Default | Description
 :-------|:-----|:--------|:-----------
-regionLabel | string | 'carousel' | Text to use for the `aria-label` that is placed on the wrapper.
-useGroupRole | boolean | true | Controls whether `role="group"` and an `aria-label` are applied to each slide.
-useAutoplayToggleButton | boolean | true | Controls whether a pause/play icon button is added when autoplay is enabled. Setting this to `false` without providing an alternative control would likely violate [WCAG 2.2.2](https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html), so be careful!
+arrowsPlacement | string ('beforeSlides' \| 'afterSlides' \| 'split') | null | Determines where the previous and next arrows are placed in the slider DOM, which determines their tabbing order. Arrows can be placed together before the slides or after the slides, or split so that the previous arrow is before the slides and the next arrow is after (this is the default). Use this setting to ensure the tabbing order is logical based on your visual design to fulfill [WCAG 1.3.2](https://www.w3.org/WAI/WCAG21/Understanding/meaningful-sequence.html) and [2.4.3](https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html).
 instructionsText | string | `null` | Instructions for screen reader users placed at the very beginning of the slider markup. **If you are using `asNavFor` or adding custom functionality with API methods/events, you probably need to supply instructions!**
 pauseIcon | string (html \| jQuery selector) \| object (DOM node \| jQuery object) | `<span class="slick-pause-icon" aria-hidden="true"></span>` | Custom element to use as the "pause" icon inside the autoplay pause/play toggle button, when `autoplay` is enabled.
 playIcon | string (html \| jQuery selector) \| object (DOM node \| jQuery object) | `<span class="slick-play-icon" aria-hidden="true"></span>` | Custom element to use as the "play" icon inside the autoplay pause/play toggle button, when `autoplay` is enabled.
-arrowsPlacement | string ('beforeSlides' \| 'afterSlides' \| 'split') | null | Determines where the previous and next arrows are placed in the slider DOM, which determines their tabbing order. Arrows can be placed together before the slides or after the slides, or split so that the previous arrow is before the slides and the next arrow is after (this is the default). Use this setting to ensure the tabbing order is logical based on your visual design to fulfill [WCAG 1.3.2](https://www.w3.org/WAI/WCAG21/Understanding/meaningful-sequence.html) and [2.4.3](https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html).
+regionLabel | string | 'carousel' | Text to use for the `aria-label` that is placed on the wrapper.
+useGroupRole | boolean | true | Controls whether `role="group"` and an `aria-label` are applied to each slide.
+useAutoplayToggleButton | boolean | true | Controls whether a pause/play icon button is added when autoplay is enabled. Setting this to `false` without providing an alternative control would likely violate [WCAG 2.2.2](https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html), so be careful!
+
 
 ### Deprecated settings ❌
 The following settings have been removed from the API, but if you pass them in through your initialization function or data attributes nothing bad will happen! If any of these settings are passed in, you'll just get a soft console warning letting you know that the setting is no longer relevant.

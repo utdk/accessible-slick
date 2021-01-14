@@ -121,6 +121,7 @@
           <li>The Previous and Next buttons now use clean, semantic markup. Say goodbye to those <code>aria-label</code>s!</li>
           <li>Screen-reader-only instructions can now be added to explain complex behaviors to screen reader users.</li>
           <li>A new, more accessible theme is now available (<code>accessible-slick-theme.min.css</code>), which comes with bigger icons and better, browser-default focus indicators! It's used by all the demos below.</li>
+          <li>When <code>centerMode</code> is enabled, the centered slide will be indicated with the text <code>" (centered)"</code> at the end of its <code>aria-label</code>.</li>
         </ul>
 
         <p><a href="https://github.com/Accessible360/accessible-slick#what-makes-this-accessible">Read more about all of these features here!</a></p>
@@ -758,22 +759,46 @@ $('.slider-nav').slick({
           </thead>
           <tbody>
             <tr>
+              <th scope="row">arrowsPlacement</th>
+              <td><b aria-hidden="true">Type:</b> string ('beforeSlides' | 'afterSlides' | 'split')</td>
+              <td><b aria-hidden="true">Default:</b> null</td>
+              <td>Determines where the previous and next arrows are placed in the slider DOM, which determines their tabbing order. Arrows can be placed together before the slides or after the slides, or split so that the previous arrow is before the slides and the next arrow is after (this is the default). Use this setting to ensure the tabbing order is logical based on your visual design to fulfill <a href="https://www.w3.org/WAI/WCAG21/Understanding/meaningful-sequence.html">WCAG 1.3.2</a> and <a href="https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html">2.4.3</a></td>
+            </tr>
+            <tr>
+              <th scope="row">instructionsText</th>
+              <td><b aria-hidden="true">Type:</b> string</td>
+              <td><b aria-hidden="true">Default:</b> null</td>
+              <td>Instructions for screen reader users placed at the very beginning of the slider markup. <b>If you are using <code>asNavFor</code> or adding custom functionality with API methods/events, you probably need to supply instructions!</b></td>
+            </tr>
+            <tr>
+              <th scope="row">pauseIcon</th>
+              <td><b aria-hidden="true">Type:</b> string (html | jQuery selector) | object (DOM node | jQuery object)</td>
+              <td><b aria-hidden="true">Default:</b> <code>&lt;span class="slick-pause-icon" aria-hidden="true"&gt;&lt;/span&gt;</code></td>
+              <td>Custom element to use as the "pause" icon inside the autoplay pause/play toggle button, when <code>autoplay</code> is enabled.</td>
+            </tr>
+            <tr>
+              <th scope="row">playIcon</th>
+              <td><b aria-hidden="true">Type:</b> string (html | jQuery selector) | object (DOM node | jQuery object)</td>
+              <td><b aria-hidden="true">Default:</b> <code>&lt;span class="slick-play-icon" aria-hidden="true"&gt;&lt;/span&gt;</code></td>
+              <td>Custom element to use as the "play" icon inside the autoplay pause/play toggle button, when <code>autoplay</code> is enabled.</td>
+            </tr>
+            <tr>
               <th scope="row">regionLabel</th>
               <td><b aria-hidden="true">Type:</b> string</td>
               <td><b aria-hidden="true">Default:</b> 'carousel'</td>
               <td>Text to use for the <code>aria-label</code> that is placed on the wrapper.</td>
             </tr>
             <tr>
-              <th scope="row">useGroupRole</th>
-              <td><b aria-hidden="true">Type:</b> boolean</td>
-              <td><b aria-hidden="true">Default:</b> true</td>
-              <td>Controls whether <code>role="group"</code> and an <code>aria-label</code> are applied to each slide.</td>
-            </tr>
-            <tr>
               <th scope="row">useAutoplayToggleButton</th>
               <td><b aria-hidden="true">Type:</b> boolean</td>
               <td><b aria-hidden="true">Default:</b> true</td>
               <td>Controls whether a pause/play icon button is added when autoplay is enabled. Setting this to <code>false</code> without providing an alternative control would likely violate <a href="https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html" target="_blank">WCAG 2.2.2</a>, so be careful!</td>
+            </tr>
+            <tr>
+              <th scope="row">useGroupRole</th>
+              <td><b aria-hidden="true">Type:</b> boolean</td>
+              <td><b aria-hidden="true">Default:</b> true</td>
+              <td>Controls whether <code>role="group"</code> and an <code>aria-label</code> are applied to each slide.</td>
             </tr>
           </tbody>
         </table>
