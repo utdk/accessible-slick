@@ -17,22 +17,30 @@ Also check out this [collection of ready-to-use demos on CodePen](https://codepe
 
 ##### Example using jsDelivr
 
-Just add a link to the css file in your `<head>`:
+Just add a link to the CSS file in your `<head>`:
 
 ```html
-TODO: pending publish to NPM
+<!-- Add the core slick.min.css -->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.css">
+
+<!-- Add ONE of the theme files (accessible version or original) -->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/accessible-slick-theme.min.css">
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick-theme.min.css">
+
+<!-- Add the accessible-slick-theme.css if you want better focus styles and larger icons -->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/accessible-slick-theme.min.css">
 ```
 
 Then, before your closing `<body>` tag add:
 
 ```html
-TODO: pending publish to NPM
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.js"></script>
 ```
 
 #### Package Managers
 
 ```sh
-TODO: pending publish to NPM
+npm install accessible-slick
 ```
 
 ## Why is this needed?
