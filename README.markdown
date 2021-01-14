@@ -191,7 +191,7 @@ grunt
 
 ## Contributing
 
-[See the contributing guidelines.](https://github.com/Accessible360/accessible-slick/blob/master/CONTRIBUTING)
+[See the contributing guidelines.](https://github.com/Accessible360/accessible-slick/blob/master/CONTRIBUTING.md)
 
 
 ## Credits
