@@ -26,9 +26,6 @@ Just add a link to the CSS file in your `<head>`:
 <!-- Add ONE of the theme files (accessible version or original) -->
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/accessible-slick-theme.min.css">
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick-theme.min.css">
-
-<!-- Add the accessible-slick-theme.css if you want better focus styles and larger icons -->
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/accessible-slick-theme.min.css">
 ```
 
 Then, before your closing `<body>` tag add:
