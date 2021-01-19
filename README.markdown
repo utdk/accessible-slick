@@ -37,7 +37,7 @@ Then, before your closing `<body>` tag add:
 #### Package Managers
 
 ```sh
-npm install accessible-slick
+npm install @accessible360/accessible-slick
 ```
 
 ## Why is this needed?
