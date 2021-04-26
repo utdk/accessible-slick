@@ -3,7 +3,7 @@ accessible-slick
 
 _the last (accessible) carousel you'll ever need_
 
-A fully accessible, WCAG 2.0 / 2.1 compliant, drop-in replacement for Slick Slider (1.8.1) intended to make life easier for real-world dev teams who need to pass accessibility audits.
+A highly accessible, WCAG 2.0 / 2.1 compliant, drop-in replacement for Slick Slider (1.8.1) intended to make life easier for real-world dev teams who need to pass accessibility audits.
 
 This package implements [accessibility and usability improvements](#what-makes-this-accessible) crafted and tested by native screen reader users, low vision users, and expert accessibility consultants at [Accessible360](https://accessible360.com) based on their experiences helping to make hundreds of carousels accessible for clients around the world. Read on to learn more about [why this package exists](#why-is-this-needed), its [features](#what-makes-this-accessible), [how to use it](#usage), and [how you can get involved!](#contributing)
 
