@@ -196,22 +196,23 @@ ul.nav {
 }
 
 
-/*********************************************
-  Github corner badge
-  https://github.com/tholman/github-corners
-**********************************************/
-.github-corner svg {
-  transition: all .2s linear;
+/*******************
+  Github icon link
+********************/
+.github-link {
+  position: absolute;
+  right: 70px;
+  top: 40px;
+  font-size: 80px;
+  color: var(--alternative-color--dark);
 }
 
-  .github-corner:hover svg,
-  .github-corner:focus svg {
-    fill: var(--alternative-color--dark) !important;
-  }
-
-  .github-corner:focus svg {
-    outline: 4px dashed orange;
-    outline-offset: 1px;
+  @media screen and (max-width: 1280px) {
+    .github-link {
+      position: static;
+      display: block;
+      text-align: center;
+    }
   }
 
 
