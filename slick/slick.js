@@ -581,6 +581,7 @@
 
         _.$slider.attr('role', 'region');
         _.$slider.attr('aria-label', _.options.regionLabel);
+        _.$slider.attr('tabindex', -1);
 
         _.$slideTrack = (_.slideCount === 0) ?
             $('<div class="slick-track"/>').appendTo(_.$slider) :
@@ -2921,7 +2922,6 @@
     };
 
     Slick.prototype.updateArrows = function() {
-
         var _ = this,
             centerOffset;
 
@@ -2936,15 +2936,27 @@
 
             if (_.currentSlide === 0) {
 
+                if(document.activeElement === _.$prevArrow.get(0)) {
+                    _.$slider.get(0).focus();
+                }
+
                 _.$prevArrow.addClass('slick-disabled').prop('disabled', true);
                 _.$nextArrow.removeClass('slick-disabled').prop('disabled', false);
 
             } else if (_.currentSlide >= _.slideCount - _.options.slidesToShow && _.options.centerMode === false) {
 
+                if(document.activeElement === _.$nextArrow.get(0)) {
+                    _.$slider.get(0).focus();
+                }
+
                 _.$nextArrow.addClass('slick-disabled').prop('disabled', true);
                 _.$prevArrow.removeClass('slick-disabled').prop('disabled', false);
 
             } else if (_.currentSlide >= _.slideCount - 1 && _.options.centerMode === true) {
+
+                if(document.activeElement === _.$nextArrow.get(0)) {
+                    _.$slider.get(0).focus();
+                }
 
                 _.$nextArrow.addClass('slick-disabled').prop('disabled', true);
                 _.$prevArrow.removeClass('slick-disabled').prop('disabled', false);
