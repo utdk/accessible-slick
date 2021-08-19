@@ -482,7 +482,6 @@
                         switch(_.options.arrowsPlacement) {
                             case 'beforeSlides':
                             case 'split':
-                                console.log('test');
                                 _.$prevArrow.prependTo(_.options.appendArrows);
                                 break;
 
@@ -500,7 +499,6 @@
                     if(_.options.arrowsPlacement != null) {
                         switch(_.options.arrowsPlacement) {
                             case 'beforeSlides':
-                                console.log('test2');
                                 _.$prevArrow.after(_.$nextArrow);
                                 break;
 
