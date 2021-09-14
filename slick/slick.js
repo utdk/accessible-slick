@@ -2286,10 +2286,15 @@
         allSlides = _.$slider
             .find('.slick-slide')
             .removeClass('slick-active slick-center slick-current')
-            .attr('aria-hidden', 'true')
-            .attr('aria-label', function() {
-                return $(this).attr('aria-label').replace(' (centered)', '');
-            });
+            .attr('aria-hidden', 'true');
+
+        if (_.options.useGroupRole !== false && _.options.centerMode === true) {
+            allSlides = allSlides
+                .find('slick-slide')
+                .attr('aria-label', function() {
+                    return $(this).attr('aria-label').replace(' (centered)', '');
+                });
+        }
 
         _.$slides
             .eq(index)
