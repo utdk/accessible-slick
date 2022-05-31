@@ -2289,8 +2289,7 @@
             .attr('aria-hidden', 'true');
 
         if (_.options.useGroupRole !== false && _.options.centerMode === true) {
-            allSlides = allSlides
-                .find('slick-slide')
+            allSlides
                 .attr('aria-label', function() {
                     return $(this).attr('aria-label').replace(' (centered)', '');
                 });
