@@ -617,8 +617,8 @@
             _.$pauseButton = $('<button type="button" class="slick-autoplay-toggle-button">');
             _.$pauseButton.append(_.$pauseIcon);
             _.$pauseButton.append(_.$playIcon.css('display', 'none'));
-            _.$pauseButton.append($('<span class="slick-pause-text slick-sr-only">Pause</span>'));
-            _.$pauseButton.append($('<span class="slick-play-text slick-sr-only" style="display: none">Play</span>'));
+            _.$pauseButton.append($('<span class="slick-pause-text slick-sr-only">Pause Carousel</span>'));
+            _.$pauseButton.append($('<span class="slick-play-text slick-sr-only" style="display: none">Play Carousel</span>'));
 
             _.$pauseButton.prependTo(_.$slider);
         }
