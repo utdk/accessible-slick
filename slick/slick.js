@@ -576,6 +576,7 @@
         });
 
         _.$slider.addClass('slick-slider');
+        _.$slider.addClass('accessible-slick')
 
         _.$slider.attr('role', 'region');
         _.$slider.attr('aria-label', _.options.regionLabel);
@@ -975,6 +976,7 @@
         _.$slider.removeClass('slick-slider');
         _.$slider.removeClass('slick-initialized');
         _.$slider.removeClass('slick-dotted');
+        _.$slider.removeClass('accessible-slick')
 
         _.unslicked = true;
 
