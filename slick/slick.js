@@ -611,7 +611,7 @@
             _.$list.addClass('draggable');
         }
 
-        if ( _.options.autoplay && _.options.useAutoplayToggleButton ) {
+        if ( _.options.autoplay && _.options.useAutoplayToggleButton && _.slideCount > 1 ) {
             _.$pauseIcon = $(_.options.pauseIcon).attr('aria-hidden', true);
             _.$playIcon = $(_.options.playIcon).attr('aria-hidden', true);
 
@@ -834,7 +834,7 @@
 
         var _ = this;
 
-        if(_.options.autoplay && _.options.useAutoplayToggleButton) {
+        if(_.options.autoplay && _.options.useAutoplayToggleButton && _.slideCount > 1) {
             _.$pauseButton.off('click.slick', _.autoPlayToggleHandler);
         }
 
@@ -919,7 +919,7 @@
 
         $('.slick-cloned', _.$slider).detach();
 
-        if(_.options.autoplay && _.options.useAutoplayToggleButton) {
+        if(_.options.autoplay && _.options.useAutoplayToggleButton && _.slideCount > 1 ) {
             _.$pauseButton.remove();
         }
 
@@ -1465,7 +1465,7 @@
         _.initDotEvents();
         _.initSlideEvents();
 
-        if(_.options.autoplay && _.options.useAutoplayToggleButton) {
+        if(_.options.autoplay && _.options.useAutoplayToggleButton && _.slideCount > 1) {
             _.$pauseButton.on('click.slick', _.autoPlayToggleHandler);
         }
 
